@@ -1,3 +1,3 @@
-# Getting Started with Create React App
+# Cooking Stuff
 
 Its a e-commerce website, which sells stuff related to cooking
