@@ -1,0 +1,67 @@
+.navbar {
+  background: var(--e-primary);
+  color: var(--e-secondary);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 5px 5px 0.5rem rgba(0, 0, 0, 0.137);
+}
+
+.navbar .logo {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--e-secondary);
+  padding: 0.4rem 0.45rem;
+  border: 2px solid white;
+}
+.nav-item--effect {
+  font-size: 1.1rem;
+  padding: 0 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+.home:hover,
+.login:hover {
+  padding: 0 0.25rem;
+  border-bottom: 2px solid rgba(104, 11, 11, 0.7);
+}
+.navbar .navbar-search {
+  width: 30vw;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.navbar .navbar-search::placeholder {
+  color: #0e56ffc5;
+}
+
+.navbar .search-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--e-secondary);
+}
+
+.navbar .search-block {
+  background-color: white;
+  border: 0;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+.badge-icon .icon {
+  font-size: 2rem;
+  color: #0e56ffc5;
+}
+.about div {
+  margin: 0 2vw;
+}
+.badge-count--status {
+  padding-top: 0.1rem;
+}
+
+/* --------------mobile size----------------- */
+@media screen and (max-width: 670px) {
+  .navbar .navbar-search {
+    min-width: 13rem;
+  }
+}
