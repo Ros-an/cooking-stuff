@@ -1,0 +1,16 @@
+.footer {
+  background: rgb(19, 7, 53);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 5rem 0rem;
+}
+
+.footer--heading {
+  color: white;
+  font-size: 1.25rem;
+}
+.footer .image img {
+  height: 1.5rem;
+  width: 3rem;
+}
