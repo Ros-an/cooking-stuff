@@ -10,7 +10,7 @@ const slideImages = [
 
 const Slideshow = () => {
   return (
-    <div>
+    <div className="slideshow">
       <Slide easing="ease">
         <div className="each-slide">
           <div style={{ backgroundImage: `url(${slideImages[0]})` }}>
