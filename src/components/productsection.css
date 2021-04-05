@@ -1,5 +1,5 @@
 .product-section {
-  margin: 1rem 0.5rem;
+  margin: 5rem 0.5rem 0.5rem;
   display: grid;
   grid-gap: 0.75rem;
   grid-template-columns: repeat(9, 1fr);
@@ -21,8 +21,8 @@
 
 .product-section .filter-part,
 .product-section .product-part {
-  box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.082);
-  border-radius: 0.25rem;
+  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.082);
+  border-radius: 0.1rem;
 }
 
 /* Products========================== */
@@ -66,6 +66,7 @@
 @media screen and (max-width: 670px) {
   .product-section {
     display: grid;
+    margin: 7rem 0 0;
     grid-gap: 0.25rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
