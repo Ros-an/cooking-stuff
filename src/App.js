@@ -10,9 +10,9 @@ function App() {
   const { state } = useGlobal();
   return (
     <>
-      <Slideshow />
       {state.showModal && <Modal />}
       <Navbar />
+      <Slideshow />
       <ProductSection />
       <Footer />
     </>
