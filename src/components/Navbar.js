@@ -1,7 +1,10 @@
 import React from "react";
 import "./navbar.css";
-
+import { Link } from "react-router-dom";
+import { useGlobal } from "../globalContext";
 const NavBar = () => {
+  const { state } = useGlobal();
+  const { cart } = state;
   return (
     <div className="container-grid navbar">
       <div className="logo pointer-cursor nav-item--effect">Cooking-Stuff</div>
@@ -13,11 +16,15 @@ const NavBar = () => {
           </button>
         </div>
       </div>
-      <div className="home pointer-cursor nav-item--effect">Home</div>
+      <div className="home pointer-cursor nav-item--effect">
+        <Link to="/">Home</Link>
+      </div>
       <div className="about pointer-cursor nav-item--effect">
         <div class="badge-icon">
-          <i class="fas fa-shopping-bag icon"></i>
-          <span class="badge-count--status">7</span>
+          <Link to="/cart">
+            <i class="fas fa-shopping-bag icon"></i>
+            <span class="badge-count--status">{cart.length}</span>
+          </Link>
         </div>
         <div class="badge-icon">
           <i class="fas fa-heart icon"></i>
