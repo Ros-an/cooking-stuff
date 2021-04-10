@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
+import { useGlobal } from "./globalContext";
 
 export const Modal = () => {
-  //   useEffect(() => {
-  //     setTimeout(() => xyz, 2000);
-  //   });
+  const { state, closeModal } = useGlobal();
+  useEffect(() => {
+    setTimeout(() => closeModal(), 2000);
+  });
   return (
     <div className="modal">
-      <p>this is modal text</p>
+      <p>{state.modalContent}</p>
     </div>
   );
 };
