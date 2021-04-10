@@ -5,6 +5,7 @@ import { reducer } from "./global-reducer";
 export const GlobalContext = createContext();
 
 const defaultState = {
+  products: productList,
   cart: [],
   wishList: [],
   showModal: false,
@@ -12,9 +13,8 @@ const defaultState = {
 };
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
-  const [product, setProduct] = useState(productList);
   const closeModal = () => {
-    dispatch();
+    dispatch({ type: "CLOSE_MODAL" });
   };
 
   return (
@@ -22,8 +22,6 @@ export const GlobalProvider = ({ children }) => {
       value={{
         state,
         dispatch,
-        product,
-        setProduct,
         closeModal,
       }}
     >
