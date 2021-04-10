@@ -2,7 +2,7 @@
 
 .slideshow {
   margin-top: 4.5rem;
-  z-index: 1;
+  z-index: 0;
 }
 .each-slide > div {
   display: flex;
