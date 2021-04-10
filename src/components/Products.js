@@ -1,10 +1,10 @@
 import { useGlobal } from "../globalContext";
-
+import { AddToCartButton } from "./Buttons";
 export const Products = () => {
-  const { product } = useGlobal();
+  const { state } = useGlobal();
   return (
     <div className="product-section__subsection product-part">
-      {product.map((item) => {
+      {state.products.map((item) => {
         return (
           <div class="card">
             <div class="card-image">
@@ -16,12 +16,7 @@ export const Products = () => {
               <h4>Product name</h4>
               <p>price</p>
               <p>little</p>
-              <button class="btn-product cart-btn">
-                <span>
-                  <i class="fas fa-cart-plus"></i>
-                </span>
-                <span> ADD TO CART</span>
-              </button>
+              <AddToCartButton item={item} />
             </div>
           </div>
         );
