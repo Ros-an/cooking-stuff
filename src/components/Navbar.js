@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useGlobal } from "../globalContext";
 const NavBar = () => {
   const { state } = useGlobal();
@@ -17,14 +17,26 @@ const NavBar = () => {
         </div>
       </div>
       <div className="home pointer-cursor nav-item--effect">
-        <Link to="/">Home</Link>
+        <NavLink
+          to="/"
+          activeStyle={{
+            textDecoration: "none",
+          }}
+        >
+          Home
+        </NavLink>
       </div>
       <div className="about pointer-cursor nav-item--effect">
         <div class="badge-icon">
-          <Link to="/cart">
+          <NavLink
+            to="/cart"
+            activeStyle={{
+              textDecoration: "none",
+            }}
+          >
             <i class="fas fa-shopping-bag icon"></i>
             <span class="badge-count--status">{cart.length}</span>
-          </Link>
+          </NavLink>
         </div>
         <div class="badge-icon">
           <i class="fas fa-heart icon"></i>
