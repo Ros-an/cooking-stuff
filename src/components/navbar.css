@@ -28,27 +28,6 @@
   padding: 0 0.25rem;
   border-bottom: 2px solid rgba(104, 11, 11, 0.7);
 }
-.navbar .navbar-search {
-  width: 30vw;
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem;
-}
-.navbar .navbar-search::placeholder {
-  color: #0e56ffc5;
-}
-
-.navbar .search-btn {
-  font-size: 1rem;
-  padding: 0.5rem;
-  color: var(--e-secondary);
-}
-
-.navbar .search-block {
-  background-color: white;
-  border: 0;
-  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
-}
 .badge-icon .icon {
   font-size: 2rem;
   color: #0e56ffc5;
@@ -58,11 +37,4 @@
 }
 .badge-count--status {
   padding-top: 0.1rem;
-}
-
-/* --------------mobile size----------------- */
-@media screen and (max-width: 670px) {
-  .navbar .navbar-search {
-    min-width: 13rem;
-  }
 }
