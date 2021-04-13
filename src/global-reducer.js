@@ -49,6 +49,28 @@ export const reducer = (state, action) => {
         ...state,
         cart: newCart2,
       };
+    case "ADD_TO_WISHL":
+      if (wishList.some((e) => e.id === payLoad.id)) {
+        const newWishL = wishList.filter((item) => item.id !== payLoad.id);
+        return {
+          ...state,
+          wishList: newWishL,
+          showModal: true,
+          modalContent: "removed from wishlist!!",
+        };
+      }
+      return {
+        ...state,
+        wishList: [...wishList, payLoad],
+        showModal: true,
+        modalContent: "added to wishlist!!",
+      };
+    case "REMOVE_FROM_WISHLIST":
+      const newWishL1 = wishList.filter((item) => item.id !== payLoad);
+      return {
+        ...state,
+        wishList: newWishL1,
+      };
     case "CLOSE_MODAL":
       return { ...state, showModal: false };
     default:
