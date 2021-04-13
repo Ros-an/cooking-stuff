@@ -14,6 +14,8 @@ export const AddToCartButton = ({ item }) => {
   return (
     <>
       <button
+        disabled={item.isAddedToCart}
+        style={{ margin: "0" }}
         class="btn-product cart-btn"
         onClick={() => dispatch({ type: "ADD_TO_CART", payLoad: item })}
       >
