@@ -41,19 +41,19 @@ function WishList() {
       <div className="wishlist__card-section">
         {state.wishList.map((item) => {
           return (
-            <div class="card" key={item.id}>
-              <div class="card-image">
+            <div className="card" key={item.id}>
+              <div className="card-image">
                 <img src={item.image} />
                 <span
-                  class="card-badge--remove pointer-cursor"
+                  className="card-badge--remove pointer-cursor"
                   onClick={() =>
                     dispatch({ type: "REMOVE_FROM_WISHLIST", payLoad: item.id })
                   }
                 >
-                  <i class="far fa-times-circle"></i>
+                  <i className="far fa-times-circle"></i>
                 </span>
               </div>
-              <div class="card-content">
+              <div className="card-content">
                 <p>Rating</p>
                 <h4>Product name</h4>
                 <p>{item.price}</p>

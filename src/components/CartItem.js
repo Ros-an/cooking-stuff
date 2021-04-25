@@ -7,30 +7,30 @@ export const CartItem = ({ state, dispatch }) => {
       {state.cart.map((item) => {
         const { id, image, quantity } = item;
         return (
-          <div class="horizontal-card-row" key={id}>
+          <div className="horizontal-card-row" key={id}>
             <div className="horizontal-card__image">
               <img src={image} alt="image" />
             </div>
-            <div class="product-detail">
-              <div class="product-quantity">
-                <p class="product-name">Product name</p>
-                <p class="product-price">Price</p>
+            <div className="product-detail">
+              <div className="product-quantity">
+                <p className="product-name">Product name</p>
+                <p className="product-price">Price</p>
                 <button
                   className="minus"
                   onClick={() =>
                     dispatch({ type: "COUNT_DOWN", payLoad: item })
                   }
                 >
-                  <i class="fas fa-angle-double-left"></i>
+                  <i className="fas fa-angle-double-left"></i>
                 </button>
-                <button class="quantity">{quantity}</button>
+                <button className="quantity">{quantity}</button>
                 <button
                   className="plus"
                   onClick={() =>
                     dispatch({ type: "COUNT_UP", payLoad: item.id })
                   }
                 >
-                  <i class="fas fa-angle-double-right"></i>
+                  <i className="fas fa-angle-double-right"></i>
                 </button>
               </div>
               <div className="horizontal-card__button">
@@ -41,17 +41,17 @@ export const CartItem = ({ state, dispatch }) => {
                       payLoad: item,
                     })
                   }
-                  class="remove-btn"
+                  className="remove-btn"
                 >
                   WISHLIST
                 </button>
                 <button
-                  class="remove-btn"
+                  className="remove-btn"
                   onClick={() =>
                     dispatch({ type: "REMOVE_FROM_CART", payLoad: item.id })
                   }
                 >
-                  <i class="fas fa-trash-alt"></i>
+                  <i className="fas fa-trash-alt"></i>
                 </button>
               </div>
             </div>

@@ -21,12 +21,16 @@ export const Products = () => {
           {state.products.map((item) => {
             const { inStock } = item;
             return (
-              <div class="card" style={{ boxShadow: !inStock && "none" }}>
-                <div class="card-image">
+              <div
+                className="card"
+                style={{ boxShadow: !inStock && "none" }}
+                key={item.id}
+              >
+                <div className="card-image">
                   <img src={item.image} />
                   <button
                     style={wishItemToggle(item.id)}
-                    class="pointer-cursor"
+                    className="pointer-cursor"
                     onClick={() => {
                       dispatch({ type: "ADD_TO_WISHL", payLoad: item });
                     }}
@@ -35,12 +39,12 @@ export const Products = () => {
                   </button>
                 </div>
                 <div
-                  class="out-of-stock"
+                  className="out-of-stock"
                   style={{ visibility: inStock ? "hidden" : "visible" }}
                 >
-                  <div class="out-of-stock--tag">OUT OF STOCK</div>
+                  <div className="out-of-stock--tag">OUT OF STOCK</div>
                 </div>
-                <div class="card-content">
+                <div className="card-content">
                   <p>Rating</p>
                   <h4>Product name</h4>
                   <p>₹ {item.price}</p>
