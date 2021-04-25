@@ -16,6 +16,9 @@ html {
   --e-secondary: #0e55ff;
   --e-primary: #ffb80e;
 }
+main {
+  margin-top: 4.5rem;
+}
 .section-heading {
   text-align: center;
   font-size: 1.75rem;
