@@ -1,0 +1,23 @@
+.price-detail {
+  margin-right: 1vw;
+}
+.price-detail--heading {
+  font-size: 1.25rem;
+  padding: 1rem;
+  background: white;
+  margin-bottom: 1px;
+}
+.price-detail .price,
+.price-detail .delivery-charge,
+.price-detail .price-detail__amount {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: white;
+}
+.price-detail .price-detail__amount {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-top: 1px dashed var(--e-primary);
+}
