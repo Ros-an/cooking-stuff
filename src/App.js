@@ -15,14 +15,16 @@ function App() {
     <>
       {state.showModal && <Modal />}
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
+      <main>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
 
-        <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
 
-        <Route path="/wishlist" element={<WishList />} />
-        <Route path="/products" element={<ProductSection />} />
-      </Routes>
+          <Route path="/wishlist" element={<WishList />} />
+          <Route path="/products" element={<ProductSection />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );
