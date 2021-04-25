@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./cart.css";
+import "./css/cart.css";
 import { useGlobal } from "../globalContext";
 import { CartItem } from "./CartItem";
+import { Total } from "./Total";
 
 export const Cart = () => {
   const { state, dispatch } = useGlobal();
@@ -38,8 +39,15 @@ export const Cart = () => {
   }
   return (
     <>
-      <div className="cart-block">
-        <CartItem state={state} dispatch={dispatch} />
+      <div className="cart-headsection">
+        <p className="section-heading">CART ITEM</p>
+        <p className="cart-count">No. of item: {state.cart.length}</p>
+      </div>
+      <div className="cart-bodysection">
+        <div className="cart-block">
+          <CartItem state={state} dispatch={dispatch} />
+        </div>
+        <Total />
       </div>
     </>
   );
