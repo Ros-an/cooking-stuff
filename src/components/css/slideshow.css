@@ -1,7 +1,6 @@
 @import "react-slideshow-image/dist/styles.css";
 
 .slideshow {
-  margin-top: 4.5rem;
   z-index: 0;
 }
 .each-slide > div {
