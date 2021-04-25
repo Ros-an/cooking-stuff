@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useGlobal } from "../globalContext";
-import "./wishlist.css";
+import "./css/wishlist.css";
 function WishList() {
   const { state, dispatch } = useGlobal();
   if (state.wishList.length === 0) {
@@ -37,7 +37,7 @@ function WishList() {
   return (
     <div className="wishlist">
       <p className="section-heading">WishList</p>
-      <p>No. of item: {state.wishList.length}</p>
+      <p className="cart-count">No. of item: {state.wishList.length}</p>
       <div className="wishlist__card-section">
         {state.wishList.map((item) => {
           return (
@@ -59,7 +59,18 @@ function WishList() {
                 <p>{item.price}</p>
                 <p>little</p>
                 <div className="wishlist-btn">
-                  <button className="add-cart">ADD TO CART</button>
+                  <button
+                    onClick={() =>
+                      dispatch({
+                        type: "ADD_TO_CART_FROM_WISHLIST",
+                        payLoad: item,
+                      })
+                    }
+                    className="add-cart"
+                  >
+                    {" "}
+                    ADD TO CART
+                  </button>
                 </div>
               </div>
             </div>

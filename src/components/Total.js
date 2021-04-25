@@ -1,13 +1,25 @@
 import React from "react";
-
+import "./css/total.css";
+import { useGlobal } from "../globalContext";
 export const Total = () => {
+  const { state } = useGlobal();
   return (
-    <div className="total-block">
-      <div className="sub-total">
-        <h3>{`Subtotal :          Rs. ${total}`}</h3>
-        <p>{`No. of item :      ${amount}`}</p>
+    <div className="price-detail">
+      <div className="price-detail--heading">Price Details</div>
+      <div className="price-detail__calculation">
+        <div className="price">
+          <p>Price{`(${state.cart.length} item)`}</p>
+          <p>Rs. 00</p>
+        </div>
+        <div className="delivery-charge">
+          <p>Delivery Charge</p>
+          <p>Rs. 0</p>
+        </div>
       </div>
-      <h2>{`Order Total :      Rs. ${total}`}</h2>
+      <div className="price-detail__amount">
+        <p>Total Amount:</p>
+        <p>Rs 000</p>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,10 @@
-import "./productsection.css";
+import "./css/productsection.css";
 import { Products } from "./Products";
+import Filter from "./filter";
 export const ProductSection = () => {
   return (
     <div className="product-section">
-      <div className="product-section__subsection filter-part">
-        <div className="filter-content">
-          <p>Here will be the filter section</p>
-        </div>
-      </div>
+      <Filter />
       <Products />
     </div>
   );

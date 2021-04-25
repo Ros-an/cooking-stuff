@@ -71,9 +71,37 @@ export const reducer = (state, action) => {
         ...state,
         wishList: newWishL1,
       };
+    case "ADD_TO_WISHLIST_FROM_CART":
+      if (wishList.some((e) => e.id === payLoad.id)) {
+        return {
+          ...state,
+          showModal: true,
+          modalContent: "already there!",
+        };
+      }
+      return {
+        ...state,
+        wishList: [...wishList, payLoad],
+        showModal: true,
+        modalContent: "added",
+      };
+    case "ADD_TO_CART_FROM_WISHLIST":
+      if (cart.some((e) => e.id === payLoad.id)) {
+        return {
+          ...state,
+          showModal: true,
+          modalContent: "added!",
+        };
+      }
+      return {
+        ...state,
+        cart: [...cart, payLoad],
+        showModal: true,
+        modalContent: "added!",
+      };
     case "CLOSE_MODAL":
       return { ...state, showModal: false };
     default:
-      return state;
+      return { ...state };
   }
 };

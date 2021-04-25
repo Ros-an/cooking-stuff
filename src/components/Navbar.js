@@ -1,5 +1,5 @@
 import React from "react";
-import "./navbar.css";
+import "./css/navbar.css";
 import { NavLink } from "react-router-dom";
 import { useGlobal } from "../globalContext";
 const NavBar = () => {
@@ -7,7 +7,13 @@ const NavBar = () => {
   const { cart, wishList } = state;
   return (
     <div className="container-grid navbar">
-      <div className="logo pointer-cursor nav-item--effect">Cooking-Stuff</div>
+      <div className="logo pointer-cursor nav-item--effect">
+        {" "}
+        <span className="logo-small">
+          <i class="fas fa-utensils"></i>
+        </span>{" "}
+        <span className="logo-large">Cooking-Stuff</span>
+      </div>
       <div className="search"></div>
       <div className="home pointer-cursor nav-item--effect">
         <NavLink
