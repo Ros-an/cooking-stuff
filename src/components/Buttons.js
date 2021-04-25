@@ -1,10 +1,18 @@
-import "./buttons.css";
+import "./css/buttons.css";
 import { useGlobal } from "../globalContext";
+import { NavLink } from "react-router-dom";
 
 export const AllProducts = () => {
   return (
     <div className="all-products-btn">
-      <button className="all-products pointer-cursor">ALL PRODUCTS</button>
+      <NavLink
+        to="/products"
+        activeStyle={{
+          textDecoration: "none",
+        }}
+      >
+        <button className="all-products pointer-cursor">ALL PRODUCTS</button>
+      </NavLink>
     </div>
   );
 };
