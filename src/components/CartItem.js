@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/cart.css";
 
 export const CartItem = ({ state, dispatch }) => {
   return (
@@ -7,15 +8,15 @@ export const CartItem = ({ state, dispatch }) => {
         const { id, image, quantity } = item;
         return (
           <div class="horizontal-card-row" key={id}>
-            <div className="image-div">
+            <div className="horizontal-card__image">
               <img src={image} alt="image" />
             </div>
             <div class="product-detail">
-              <h3>Product name</h3>
-              <h3>Price</h3>
               <div class="product-quantity">
+                <p class="product-name">Product name</p>
+                <p class="product-price">Price</p>
                 <button
-                  class="minus"
+                  className="minus"
                   onClick={() =>
                     dispatch({ type: "COUNT_DOWN", payLoad: item })
                   }
@@ -24,7 +25,7 @@ export const CartItem = ({ state, dispatch }) => {
                 </button>
                 <button class="quantity">{quantity}</button>
                 <button
-                  class="plus"
+                  className="plus"
                   onClick={() =>
                     dispatch({ type: "COUNT_UP", payLoad: item.id })
                   }
@@ -32,14 +33,27 @@ export const CartItem = ({ state, dispatch }) => {
                   <i class="fas fa-angle-double-right"></i>
                 </button>
               </div>
-              <button
-                class="remove-btn"
-                onClick={() =>
-                  dispatch({ type: "REMOVE_FROM_CART", payLoad: item.id })
-                }
-              >
-                <i class="fas fa-trash-alt"></i>
-              </button>
+              <div className="horizontal-card__button">
+                <button
+                  onClick={() =>
+                    dispatch({
+                      type: "ADD_TO_WISHLIST_FROM_CART",
+                      payLoad: item,
+                    })
+                  }
+                  class="remove-btn"
+                >
+                  WISHLIST
+                </button>
+                <button
+                  class="remove-btn"
+                  onClick={() =>
+                    dispatch({ type: "REMOVE_FROM_CART", payLoad: item.id })
+                  }
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
             </div>
           </div>
         );
