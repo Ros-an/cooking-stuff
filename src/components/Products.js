@@ -1,8 +1,10 @@
 import { useGlobal } from "../globalContext";
+import { useFilterContext } from "../filterContext";
 import SearchAndSort from "./SearchAndSort";
 import { AddToCartButton } from "./Buttons";
 export const Products = () => {
   const { state, dispatch } = useGlobal();
+  const { filtered_products } = useFilterContext();
 
   const customStyle = {
     color: "red",
@@ -18,7 +20,7 @@ export const Products = () => {
       <div className="product-block">
         <SearchAndSort />
         <div className="product-part">
-          {state.products.map((item) => {
+          {filtered_products.map((item) => {
             const { inStock } = item;
             return (
               <div
