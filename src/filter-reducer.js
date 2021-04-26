@@ -14,6 +14,19 @@ function reducer(state, action) {
         ...state,
         sort: payLoad,
       };
+    case "SORT_PRODUCTS":
+      const { sort, filtered_products } = state;
+      let tempProducts = [...filtered_products];
+      if (sort === "low-to-high") {
+        tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+      }
+      if (sort === "high-to-low") {
+        tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+      }
+      return {
+        ...state,
+        filtered_products: tempProducts,
+      };
     default:
       throw new Error(`No Matching "${type}" - action type`);
   }
