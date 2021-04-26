@@ -16,6 +16,11 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "LOADING_PRODUCTS", payLoad: state.products });
   }, [state.products]);
+
+  useEffect(() => {
+    dispatch({ type: "SORT_PRODUCTS" });
+  }, [state.products, filtered_state.sort]);
+
   const updateSort = (e) => {
     // console.log(e.target);
     const { name, value } = e.target;
