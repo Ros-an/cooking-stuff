@@ -1,5 +1,5 @@
 .product-section {
-  margin: 5rem 0.5rem 0.5rem;
+  margin: 4.5rem 0.5rem 0.5rem;
   position: relative;
   display: flex;
 }
@@ -8,6 +8,7 @@
 .product-section .product-part {
   border-radius: 0.1rem;
 }
+
 /* --------FILTER SECTION--------- */
 .filter-part {
   width: 20vw;
@@ -69,9 +70,6 @@
 .product-part {
   padding-top: 3vw;
   background: white;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
@@ -81,7 +79,8 @@
   margin: 0.75rem 0.5rem;
   flex: 1 1 200px;
   background: #fff;
-  max-width: 30%;
+  max-width: 24%;
+  cursor: auto;
   position: relative;
 }
 .card-image {
@@ -107,7 +106,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 2;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .product-img {
@@ -119,27 +118,31 @@
   color: rgba(128, 128, 128, 0.685);
   border: none;
   font-size: 1.5rem;
+  z-index: 2;
 }
 .card .card-content {
+  text-decoration: none;
+  color: inherit;
   background: transparent;
-  padding: 0;
+  padding: 0.75rem 0;
 }
-.card .btn-product {
-  min-width: 100%;
-  border: none;
-  border-radius: 0;
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  background: var(--e-primary);
-  color: var(--e-secondary);
-  font-weight: 500;
+.card .link-to-page {
+  position: absolute;
+  background: rgba(179, 176, 176, 0);
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
 }
-
+@media screen and (max-width: 1200px) {
+  .card {
+    max-width: 30%;
+  }
+}
 /* ----------for small screen------------- */
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 780px) {
   .product-section {
-    margin: 7rem 0 0;
+    margin: 4.5rem 0 0;
   }
   .product-part {
     justify-content: center;
