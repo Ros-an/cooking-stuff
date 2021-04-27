@@ -1,4 +1,5 @@
 import { useGlobal } from "../globalContext";
+import { Link } from "react-router-dom";
 import { useFilterContext } from "../filterContext";
 import SearchAndSort from "./SearchAndSort";
 import { AddToCartButton } from "./Buttons";
@@ -23,13 +24,10 @@ export const Products = () => {
           {filtered_products.map((item) => {
             const { inStock } = item;
             return (
-              <div
-                className="card"
-                style={{ boxShadow: !inStock && "none" }}
-                key={item.id}
-              >
+              <div className="card" key={item.id}>
                 <div className="card-image">
-                  <img src={item.image} />
+                  <img src={item.image} alt={item.id} />
+
                   <button
                     style={wishItemToggle(item.id)}
                     className="pointer-cursor"
@@ -40,6 +38,7 @@ export const Products = () => {
                     ❤
                   </button>
                 </div>
+
                 <div
                   className="out-of-stock"
                   style={{ visibility: inStock ? "hidden" : "visible" }}
@@ -47,12 +46,16 @@ export const Products = () => {
                   <div className="out-of-stock--tag">OUT OF STOCK</div>
                 </div>
                 <div className="card-content">
-                  <p>Rating</p>
                   <h4>Product name</h4>
+                  <p>Rating</p>
                   <p>₹ {item.price}</p>
-                  <p>little</p>
-                  <AddToCartButton item={item} />
+                  {/* <p>little</p> */}
+                  {/* <AddToCartButton item={item} /> */}
                 </div>
+                <Link
+                  to={`/products/${item.id}`}
+                  className="link-to-page"
+                ></Link>
               </div>
             );
           })}
