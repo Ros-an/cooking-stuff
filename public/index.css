@@ -17,7 +17,7 @@ html {
   --e-primary: #ffb80e;
 }
 main {
-  margin-top: 4.5rem;
+  margin-top: 4.15rem;
 }
 .section-heading {
   text-align: center;
@@ -31,9 +31,9 @@ main {
 .modal {
   position: fixed;
   padding-left: 1rem;
-  top: 10vw;
-  right: 3vw;
-  transition: ease-in;
-  box-shadow: 2px 2px 2px #0e56ff31;
+  bottom: 4vw;
+  right: 2vw;
+  transition: 0.5s;
+  box-shadow: 0 0 5px 2px #0e56ff31;
   z-index: 1000;
 }
