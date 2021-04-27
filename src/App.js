@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import { Modal } from "./Modal";
 import { useGlobal } from "./globalContext";
 import WishList from "./components/WishList";
+import ProductPage from "./components/ProductPage";
 
 function App() {
   const { state } = useGlobal();
@@ -18,9 +19,8 @@ function App() {
       <main>
         <Routes>
           <Route exact path="/" element={<Home />} />
-
           <Route path="/cart" element={<Cart />} />
-
+          <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/products" element={<ProductSection />} />
         </Routes>
