@@ -1,0 +1,21 @@
+.single-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 7rem auto 3rem;
+  width: 80%;
+
+  /* width: fit-content; */
+}
+.single-product .section-image {
+  padding: 0 3vw 3vw;
+  width: 45%;
+}
+.single-product .section-detail {
+  width: 55%;
+  align-self: baseline;
+}
+.single-product .section-image img {
+  width: 100%;
+}
