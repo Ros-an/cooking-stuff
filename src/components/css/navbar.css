@@ -2,11 +2,11 @@
   background: var(--e-primary);
   color: var(--e-secondary);
   font-weight: 500;
-  margin-bottom: 0.25rem;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  padding: 0.75rem 0.5rem;
   box-shadow: 5px 5px 0.5rem rgba(0, 0, 0, 0.137);
 }
 
@@ -26,20 +26,24 @@
   border-bottom: 2px solid transparent;
   transition: 0.5s;
 }
+.navbar a {
+  text-decoration: none;
+}
 .home:hover,
 .login:hover {
   padding: 0 0.25rem;
   border-bottom: 2px solid rgba(104, 11, 11, 0.7);
 }
 .badge-icon .icon {
-  font-size: 2rem;
-  color: #0e56ffc5;
+  font-size: 1.75rem;
+  /* color: #0e56ffc5; */
+  color: white;
 }
 .about div {
   margin: 0 2vw;
 }
 .badge-count--status {
-  padding-top: 0.1rem;
+  padding-top: 0.05rem;
 }
 
 @media (max-width: 670px) {
