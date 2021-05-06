@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="footer--heading">Made in India</div>
       <div className="image">
         <img
-          src="https://deploy-preview-1--roshanuidesign.netlify.app/images/Flag_of_India.svg"
+          src="https://uidesign-lib.netlify.app/images/Flag_of_India.svg"
           alt="Indian-flag"
         />
       </div>
