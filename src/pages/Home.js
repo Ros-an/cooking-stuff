@@ -1,6 +1,6 @@
 import React from "react";
-import Slideshow from "./SlideShow";
-import { AllProducts } from "./Buttons";
+import Slideshow from "../components/SlideShow";
+import { AllProducts } from "../shared/Buttons";
 
 export const Home = () => {
   return (

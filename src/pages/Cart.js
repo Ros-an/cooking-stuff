@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./css/cart.css";
-import { useGlobal } from "../globalContext";
-import { CartItem } from "./CartItem";
-import { Total } from "./Total";
+import "./cart.css";
+import { useGlobal } from "../context/globalContext";
+import { CartItem } from "../components/CartItem";
+import { Total } from "../components/Total";
 
 export const Cart = () => {
   const { state, dispatch } = useGlobal();

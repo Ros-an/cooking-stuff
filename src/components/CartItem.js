@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/cart.css";
+import "../pages/cart.css";
 
 export const CartItem = ({ state, dispatch }) => {
   return (

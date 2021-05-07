@@ -1,6 +1,6 @@
 import React from "react";
-import "./css/productpage.css";
-import { useGlobal } from "../globalContext";
+import "./productpage.css";
+import { useGlobal } from "../context/globalContext";
 import { useParams } from "react-router-dom";
 
 function ProductPage() {

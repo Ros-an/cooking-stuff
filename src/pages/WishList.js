@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useGlobal } from "../globalContext";
-import "./css/wishlist.css";
+import { useGlobal } from "../context/globalContext";
+import "./wishlist.css";
 function WishList() {
   const { state, dispatch } = useGlobal();
   if (state.wishList.length === 0) {

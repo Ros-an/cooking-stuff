@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./components/Home";
-import { Cart } from "./components/Cart";
-import { Footer } from "./components/Footer";
-import { ProductSection } from "./components/ProductionSection";
-import Navbar from "./components/Navbar";
-import { Modal } from "./Modal";
-import { useGlobal } from "./globalContext";
-import WishList from "./components/WishList";
-import ProductPage from "./components/ProductPage";
+import { Home } from "./pages/Home";
+import { Cart } from "./pages/Cart";
+import { Footer } from "./shared/Footer";
+import { ProductSection } from "./pages/ProductionSection";
+import Navbar from "./shared/Navbar";
+import { Modal } from "./shared/Modal";
+import { useGlobal } from "./context/globalContext";
+import WishList from "./pages/WishList";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   const { state } = useGlobal();

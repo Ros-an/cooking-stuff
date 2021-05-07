@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useGlobal } from "./globalContext";
+import { useGlobal } from "../context/globalContext";
 
 export const Modal = () => {
   const { state, closeModal } = useGlobal();

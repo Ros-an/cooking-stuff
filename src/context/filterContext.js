@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext, useEffect } from "react";
 import { useGlobal } from "./globalContext";
-import reducer from "./filter-reducer";
+import reducer from "../reducer/filter-reducer";
 
 export const FilterContext = createContext();
 

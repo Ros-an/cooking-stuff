@@ -1,5 +1,5 @@
-import "./css/buttons.css";
-import { useGlobal } from "../globalContext";
+import "./buttons.css";
+import { useGlobal } from "../context/globalContext";
 import { NavLink } from "react-router-dom";
 
 export const AllProducts = () => {

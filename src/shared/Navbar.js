@@ -1,7 +1,7 @@
 import React from "react";
-import "./css/navbar.css";
+import "./navbar.css";
 import { NavLink } from "react-router-dom";
-import { useGlobal } from "../globalContext";
+import { useGlobal } from "../context/globalContext";
 const NavBar = () => {
   const { state } = useGlobal();
   const { cart, wishList } = state;

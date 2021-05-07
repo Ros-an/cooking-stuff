@@ -1,8 +1,8 @@
-import { useGlobal } from "../globalContext";
+import { useGlobal } from "../context/globalContext";
 import { Link } from "react-router-dom";
-import { useFilterContext } from "../filterContext";
+import { useFilterContext } from "../context/filterContext";
 import SearchAndSort from "./SearchAndSort";
-import { AddToCartButton } from "./Buttons";
+import { AddToCartButton } from "../shared/Buttons";
 export const Products = () => {
   const { state, dispatch } = useGlobal();
   const { filtered_products } = useFilterContext();
