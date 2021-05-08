@@ -1,0 +1,30 @@
+.brand-section-heading {
+  font-size: 2.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.brand .brand__item {
+  padding: 1.75rem;
+  flex: 1 1 200px;
+  text-align: center;
+  margin: 0.55rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.15rem;
+  box-shadow: 0 0 2px 2px #ffb70e2d;
+}
+
+.brand .brand__item:hover {
+  background: var(--e-primary);
+  box-shadow: 0 0 8px 2px #ffb70e88;
+  transition: 0.3s;
+}
