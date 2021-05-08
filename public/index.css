@@ -18,6 +18,7 @@ html {
 }
 main {
   margin-top: 4.15rem;
+  height: 100%;
 }
 .section-heading {
   text-align: center;
@@ -30,10 +31,13 @@ main {
 }
 .modal {
   position: fixed;
-  padding-left: 1rem;
   bottom: 4vw;
   right: 2vw;
   transition: 0.5s;
-  box-shadow: 0 0 5px 2px #0e56ff31;
+  /* box-shadow: 0 0 5px 2px #0e56ff31; */
   z-index: 1000;
+  border-radius: 0;
+  padding-left: 1rem;
+  font-size: 1.25rem;
+  background: var(--e-primary);
 }
