@@ -41,7 +41,7 @@ export const CartItem = ({ state, dispatch }) => {
                       payLoad: item,
                     })
                   }
-                  className="remove-btn"
+                  className="remove-btn wish-btn"
                 >
                   WISHLIST
                 </button>
