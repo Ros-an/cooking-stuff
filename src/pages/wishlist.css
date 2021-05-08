@@ -30,3 +30,9 @@
   color: var(--e-secondary);
   font-weight: 500;
 }
+
+@media screen and (max-width: 780px) {
+  .wishlist__card-section {
+    padding: 0;
+  }
+}
