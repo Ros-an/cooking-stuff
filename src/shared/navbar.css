@@ -36,7 +36,6 @@
 }
 .badge-icon .icon {
   font-size: 1.75rem;
-  /* color: #0e56ffc5; */
   color: white;
 }
 .about div {
@@ -59,5 +58,8 @@
   }
   .navbar .logo .logo-small {
     display: block;
+  }
+  .badge-icon .icon {
+    font-size: 1.25rem;
   }
 }
