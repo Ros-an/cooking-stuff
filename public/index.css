@@ -13,12 +13,12 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --e-secondary: #0e55ff;
-  --e-primary: #ffb80e;
+  --e-secondary: #677eff;
+  --e-primary: #f8dd30;
 }
 main {
   margin-top: 4.15rem;
-  height: 100%;
+  min-height: 100vh;
 }
 .section-heading {
   text-align: center;
