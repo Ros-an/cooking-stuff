@@ -37,7 +37,7 @@ export const CartItem = ({ state, dispatch }) => {
                 <button
                   onClick={() =>
                     dispatch({
-                      type: "ADD_TO_WISHLIST_FROM_CART",
+                      type: "ADD_TO_WISHLIST",
                       payLoad: item,
                     })
                   }
