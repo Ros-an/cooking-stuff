@@ -47,7 +47,9 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-        <div className="login pointer-cursor nav-item--effect">User</div>
+        <NavLink to="signup-signin">
+        <div className="login pointer-cursor nav-item--effect">SignIn</div>
+        </NavLink>
       </div>
     </div>
   );
