@@ -9,6 +9,7 @@ import { Modal } from "./shared/Modal";
 import { useGlobal } from "./context/globalContext";
 import WishList from "./pages/WishList";
 import ProductPage from "./pages/ProductPage";
+import SignUpSignIn from "./pages/SignUpSignIn";
 
 function App() {
   const { state } = useGlobal();
@@ -23,6 +24,7 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/products" element={<ProductSection />} />
+          <Route path="/signup-signin" element={<SignUpSignIn />} />
         </Routes>
       </main>
       <Footer />
