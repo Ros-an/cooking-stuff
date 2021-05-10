@@ -49,7 +49,7 @@ export const reducer = (state, action) => {
         ...state,
         cart: newCart2,
       };
-    case "ADD_TO_WISHL":
+    case "ADD_TO_WISHL_PRODUCTS":
       if (wishList.some((e) => e.id === payLoad.id)) {
         const newWishL = wishList.filter((item) => item.id !== payLoad.id);
         return {
@@ -71,7 +71,7 @@ export const reducer = (state, action) => {
         ...state,
         wishList: newWishL1,
       };
-    case "ADD_TO_WISHLIST_FROM_CART":
+    case "ADD_TO_WISHLIST":
       if (wishList.some((e) => e.id === payLoad.id)) {
         return {
           ...state,
@@ -90,12 +90,18 @@ export const reducer = (state, action) => {
         return {
           ...state,
           showModal: true,
-          modalContent: "added!",
+          modalContent: "already in cart!",
         };
       }
+      const newProducts2 = products.map((product) => {
+        return product.id === payLoad.id
+          ? { ...product, isAddedToCart: true }
+          : product;
+      });
       return {
         ...state,
-        cart: [...cart, payLoad],
+        products: newProducts2,
+        cart: cart.concat(payLoad),
         showModal: true,
         modalContent: "added!",
       };
