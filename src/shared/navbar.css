@@ -36,7 +36,7 @@
 }
 .badge-icon .icon {
   font-size: 1.75rem;
-  color: white;
+  color: var(--e-secondary);
 }
 .about div {
   margin: 0 2vw;

@@ -1,5 +1,5 @@
 .footer {
-  background: rgb(19, 7, 53);
+  background: var(--e-secondary);
   display: flex;
   justify-content: center;
   align-content: center;
