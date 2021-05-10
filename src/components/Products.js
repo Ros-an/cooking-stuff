@@ -32,7 +32,10 @@ export const Products = () => {
                     style={wishItemToggle(item.id)}
                     className="pointer-cursor"
                     onClick={() => {
-                      dispatch({ type: "ADD_TO_WISHL", payLoad: item });
+                      dispatch({
+                        type: "ADD_TO_WISHL_PRODUCTS",
+                        payLoad: item,
+                      });
                     }}
                   >
                     ❤
@@ -49,8 +52,6 @@ export const Products = () => {
                   <h4>Product name</h4>
                   <p>Rating</p>
                   <p>₹ {item.price}</p>
-                  {/* <p>little</p> */}
-                  {/* <AddToCartButton item={item} /> */}
                 </div>
                 <Link
                   to={`/products/${item.id}`}
