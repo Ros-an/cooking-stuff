@@ -3,9 +3,9 @@
   justify-content: center;
 }
 .all-products {
-  border: none;
-  border-radius: 0.25rem;
   background: var(--e-secondary);
+  border-color: var(--e-secondary);
+  border-radius: 0.25rem;
   color: white;
   font-family: inherit;
   font-size: 1rem;

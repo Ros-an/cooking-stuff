@@ -22,8 +22,8 @@
 }
 .wishlist__card-section .wishlist-btn button {
   width: 100%;
-  border: none;
   font-family: inherit;
+  border-color: var(--e-primary);
   font-size: 1rem;
   padding: 0.5rem 0;
   background: var(--e-primary);
