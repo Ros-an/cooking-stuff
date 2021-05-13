@@ -1,0 +1,24 @@
+.rating {
+  margin-left: 0.2rem;
+  width: 4rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0.25rem;
+  border: 1px outset;
+  font-weight: 500;
+}
+.rating p {
+  margin: 0;
+}
+.oranged {
+  color: orange;
+}
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
