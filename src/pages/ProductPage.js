@@ -2,6 +2,7 @@ import React from "react";
 import "./productpage.css";
 import { useGlobal } from "../context/globalContext";
 import { useParams, NavLink } from "react-router-dom";
+import Rating from "../components/Rating";
 
 function ProductPage() {
   const { state, dispatch } = useGlobal();
@@ -47,8 +48,8 @@ function ProductPage() {
         </div>
         <div className="section-detail">
           <h1>this is product name</h1>
-          <h3>this is product rating</h3>
-          <h3>{product.price}</h3>
+          <Rating rating={product.rating} />
+          <h3>Rs. {product.price}</h3>
           <p>Description detail</p>
         </div>
       </div>

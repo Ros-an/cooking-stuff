@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useFilterContext } from "../context/filterContext";
 import SearchAndSort from "./SearchAndSort";
 import { AddToCartButton } from "../shared/Buttons";
+import Rating from "./Rating";
+
 export const Products = () => {
   const { state, dispatch } = useGlobal();
   const { filtered_products } = useFilterContext();
@@ -50,7 +52,7 @@ export const Products = () => {
                 </div>
                 <div className="card-content">
                   <h4>Product name</h4>
-                  <p>Rating</p>
+                  <Rating rating={item.rating} />
                   <p>₹ {item.price}</p>
                 </div>
                 <Link
