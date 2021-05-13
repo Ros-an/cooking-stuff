@@ -43,13 +43,10 @@
 .sort-and-search .search button {
   height: 2rem;
   font-size: 0.9rem;
-  border: none;
+  border-color: var(--e-primary);
   padding: 0 1rem;
   font-family: inherit;
   background: var(--e-primary);
-}
-.sort-and-search .search button:active {
-  outline: 1px solid rgba(0, 0, 0, 0.5);
 }
 .sort-and-search .sort span {
   font-weight: 500;
