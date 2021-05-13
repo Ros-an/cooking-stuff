@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useGlobal } from "../context/globalContext";
+import Rating from "../components/Rating";
+
 import "./wishlist.css";
 function WishList() {
   const { state, dispatch } = useGlobal();
@@ -40,6 +42,7 @@ function WishList() {
       <p className="cart-count">No. of item: {state.wishList.length}</p>
       <div className="wishlist__card-section">
         {state.wishList.map((item) => {
+          const { inStock } = item;
           return (
             <div className="card" key={item.id}>
               <div className="card-image">
@@ -53,9 +56,15 @@ function WishList() {
                   <i className="far fa-times-circle"></i>
                 </span>
               </div>
+              <div
+                className="out-of-stock"
+                style={{ visibility: inStock ? "hidden" : "visible" }}
+              >
+                <div className="out-of-stock--tag">OUT OF STOCK</div>
+              </div>
               <div className="card-content">
-                <p>Rating</p>
                 <h4>Product name</h4>
+                <Rating rating={item.rating} />
                 <p>{item.price}</p>
                 <p>little</p>
                 <div className="wishlist-btn">
