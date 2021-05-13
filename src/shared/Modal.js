@@ -7,8 +7,11 @@ export const Modal = () => {
     setTimeout(() => closeModal(), 2000);
   });
   return (
-    <div className="modal">
+    <div class="alert">
+      <b>Message</b>
+      <hr class="alert-hr" />
       <p>{state.modalContent}</p>
+      <i class="far fa-times-circle alert__remove--btn"></i>
     </div>
   );
 };
