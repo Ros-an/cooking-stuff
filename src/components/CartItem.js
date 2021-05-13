@@ -9,7 +9,7 @@ export const CartItem = ({ state, dispatch }) => {
         return (
           <div className="horizontal-card-row" key={id}>
             <div className="horizontal-card__image">
-              <img src={image} alt="image" />
+              <img src={image} alt="img_" />
             </div>
             <div className="product-detail">
               <div className="product-quantity">

@@ -21,7 +21,7 @@ export const Cart = () => {
         <h2>Cart is empty</h2>
 
         <NavLink
-          to="/"
+          to="/products"
           activeStyle={{
             textDecoration: "none",
             color: "white",

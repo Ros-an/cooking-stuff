@@ -1,4 +1,4 @@
-import { useState, useContext, createContext, useReducer } from "react";
+import { useContext, createContext, useReducer } from "react";
 import { productList } from "../data";
 import { reducer } from "../reducer/global-reducer";
 

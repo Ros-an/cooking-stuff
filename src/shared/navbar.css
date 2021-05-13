@@ -9,7 +9,6 @@
   padding: 0.75rem 0.5rem;
   box-shadow: 5px 5px 0.5rem rgba(0, 0, 0, 0.137);
 }
-
 .navbar .logo {
   font-size: 1.1rem;
   font-weight: 500;
@@ -17,7 +16,7 @@
   padding: 0.4rem 0.45rem;
   border: 2px solid white;
 }
-.navbar .logo .logo-small {
+.navbar .logo-small {
   display: none;
 }
 .nav-item--effect {
@@ -38,8 +37,11 @@
   font-size: 1.75rem;
   color: var(--e-secondary);
 }
-.about div {
-  margin: 0 2vw;
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 .badge-count--status {
   padding-top: 0.05rem;
@@ -49,17 +51,20 @@
   .navbar .logo {
     color: var(--e-secondary);
     padding: 0.4rem 0.75rem;
-    border: 2px solid white;
-    margin-left: 0.25rem;
+    border: 1px solid white;
+    margin-left: 0.15rem;
+    box-shadow: 0 0 4px 2px inset rgba(0, 0, 0, 0.11);
     font-size: 1.25rem;
   }
-  .navbar .logo .logo-large {
+  .navbar .logo-large {
     display: none;
   }
-  .navbar .logo .logo-small {
+  .navbar .logo-small {
     display: block;
+    font-size: 1.25rem;
+    color: var(--e-secondary);
   }
   .badge-icon .icon {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }

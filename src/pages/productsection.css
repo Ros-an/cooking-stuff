@@ -71,7 +71,7 @@
   padding-top: 3vw;
   background: white;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 

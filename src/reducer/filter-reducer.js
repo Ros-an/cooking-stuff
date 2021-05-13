@@ -1,5 +1,3 @@
-import React from "react";
-
 function reducer(state, action) {
   const { type, payLoad } = action;
   switch (type) {

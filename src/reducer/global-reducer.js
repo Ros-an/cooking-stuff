@@ -1,5 +1,3 @@
-import { useReducer } from "react";
-
 export const reducer = (state, action) => {
   const { type, payLoad } = action;
   const { cart, wishList, products } = state;

@@ -9,7 +9,7 @@ function Rating({ rating }) {
     <div className="rating">
       <p>
         <span className={`${starColor}`}>
-          <i class="fas fa-star"></i>
+          <i className="fas fa-star"></i>
         </span>{" "}
         {rating}
       </p>

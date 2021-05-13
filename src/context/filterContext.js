@@ -23,7 +23,7 @@ export const FilterProvider = ({ children }) => {
 
   const updateSort = (e) => {
     // console.log(e.target);
-    const { name, value } = e.target;
+    const { value } = e.target;
     dispatch({ type: "UPDATE_SORT", payLoad: value });
   };
   return (

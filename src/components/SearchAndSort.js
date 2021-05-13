@@ -2,7 +2,7 @@ import React from "react";
 import { useFilterContext } from "../context/filterContext";
 
 function SearchAndSort() {
-  const { filtered_products: products, sort, updateSort } = useFilterContext();
+  const { sort, updateSort } = useFilterContext();
   return (
     <div className="sort-and-search">
       <div className="search">

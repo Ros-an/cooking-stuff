@@ -8,13 +8,13 @@ const NavBar = () => {
   return (
     <div className="container-flex navbar">
       <div className="logo pointer-cursor nav-item--effect">
-        {" "}
-        <span className="logo-small">
-          <i class="fas fa-utensils"></i>
-        </span>{" "}
-        <span className="logo-large">
-          <NavLink to="/">Cooking-Stuff</NavLink>
-        </span>
+        <NavLink to="/">
+          {" "}
+          <span className="logo-small">
+            <i className="fas fa-utensils"></i>
+          </span>{" "}
+          <span className="logo-large">Cooking-Stuff</span>
+        </NavLink>
       </div>
       <div className="nav-item">
         <div className="home pointer-cursor nav-item--effect">
@@ -24,22 +24,22 @@ const NavBar = () => {
           <NavLink to="/products">Products</NavLink>
         </div>
         <div className="about pointer-cursor nav-item--effect">
-          <div class="badge-icon">
+          <div className="badge-icon">
             <NavLink to="/cart">
-              <i class="fas fa-shopping-bag icon"></i>
+              <i className="fas fa-shopping-bag icon"></i>
               <span
-                class="badge-count--status"
+                className="badge-count--status"
                 style={{ visibility: cart.length ? "visible" : "hidden" }}
               >
                 {cart.length}
               </span>
             </NavLink>
           </div>
-          <div class="badge-icon">
+          <div className="badge-icon">
             <NavLink to="/wishlist">
-              <i class="fas fa-heart icon"></i>
+              <i className="fas fa-heart icon"></i>
               <span
-                class="badge-count--status"
+                className="badge-count--status"
                 style={{ visibility: wishList.length ? "visible" : "hidden" }}
               >
                 {wishList.length}
@@ -47,8 +47,13 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-        <NavLink to="signup-signin">
-        <div className="login pointer-cursor nav-item--effect">SignIn</div>
+        <NavLink to="/authenticate">
+          <div className="login pointer-cursor nav-item--effect">
+            <span className="logo-large">SignIn</span>
+            <span className="logo-small">
+              <i className="far fa-user-circle"></i>
+            </span>
+          </div>
         </NavLink>
       </div>
     </div>

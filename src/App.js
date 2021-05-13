@@ -24,7 +24,7 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/products" element={<ProductSection />} />
-          <Route path="/signup-signin" element={<SignUpSignIn />} />
+          <Route path="/authenticate" element={<SignUpSignIn />} />
         </Routes>
       </main>
       <Footer />

@@ -20,7 +20,7 @@ function WishList() {
         <h2>Wishlist is empty</h2>
 
         <NavLink
-          to="/"
+          to="/products"
           activeStyle={{
             textDecoration: "none",
             color: "white",
@@ -46,7 +46,7 @@ function WishList() {
           return (
             <div className="card" key={item.id}>
               <div className="card-image">
-                <img src={item.image} />
+                <img src={item.image} alt="img_" />
                 <span
                   className="card-badge--remove pointer-cursor"
                   onClick={() =>

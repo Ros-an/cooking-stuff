@@ -2,7 +2,6 @@ import { useGlobal } from "../context/globalContext";
 import { Link } from "react-router-dom";
 import { useFilterContext } from "../context/filterContext";
 import SearchAndSort from "./SearchAndSort";
-import { AddToCartButton } from "../shared/Buttons";
 import Rating from "./Rating";
 
 export const Products = () => {
