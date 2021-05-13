@@ -27,29 +27,34 @@
   max-height: 12rem;
   max-width: 175px;
 }
+.product-quantity button {
+  margin: 0.25rem;
+}
+.product-quantity .quantity {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--e-secondary);
+}
+.product-quantity .minus,
+.product-quantity .plus {
+  font-size: 1rem;
+  border: 1px outset var(--e-secondary);
+  background: var(--e-secondary);
+  color: white;
+  border-radius: 0;
+}
 .horizontal-card__button .remove-btn {
   border-radius: 0;
-  border: none;
+  border: 1px outset red;
   padding: 0.5rem;
   margin: 2px;
   background: red;
 }
 .horizontal-card__button .wish-btn {
   background: orange;
+  border-color: orange;
 }
 .horizontal-card__button .remove-btn:active {
   outline: 1px solid rgba(0, 0, 0, 0.5);
-}
-.product-quantity button {
-  margin: 0.25rem;
-}
-.product-quantity .quantity {
-  padding: 0.35rem 0.7rem;
-}
-.product-quantity .minus,
-.product-quantity .plus {
-  font-size: 1rem;
-  border-radius: 0;
 }
 
 /* --------------small screen-------------- */
