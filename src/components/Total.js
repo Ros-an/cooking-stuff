@@ -20,6 +20,9 @@ export const Total = () => {
         <p>Total Amount:</p>
         <p>Rs 000</p>
       </div>
+      <button className="price-detail--checkout pointer-cursor">
+        CHECKOUT
+      </button>
     </div>
   );
 };
