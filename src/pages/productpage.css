@@ -16,6 +16,7 @@
   border-width: 1px;
   border-style: outset;
   padding: 0.5rem;
+  background: white;
   border-radius: 0.5rem;
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
 }
@@ -65,6 +66,9 @@
 .single-product .section-detail * {
   margin: 1rem 0;
 }
+.single-product .section-detail .showMore {
+  color: var(--e-secondary);
+}
 /* --------out of stock-------- */
 .single-product .out-of-stock {
   position: absolute;
@@ -93,11 +97,18 @@
 }
 /* --------small screen--------- */
 @media screen and (max-width: 750px) {
+  .back-btn {
+    margin: 0.5rem 0 0.25rem 0.25rem;
+  }
   .single-product {
     flex-direction: column;
+    margin: 0.25rem;
+    padding: 0;
   }
   .single-product .section-image {
-    /* padding: 5vw; */
-    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .single-product .section-detail {
+    padding: 0.5rem;
   }
 }
