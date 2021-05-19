@@ -5,11 +5,11 @@ export const CartItem = ({ state, dispatch }) => {
   return (
     <>
       {state.cart.map((item) => {
-        const { id, image, quantity } = item;
+        const { _id, imageUrl, quantity } = item;
         return (
-          <div className="horizontal-card-row" key={id}>
+          <div className="horizontal-card-row" key={_id}>
             <div className="horizontal-card__image">
-              <img src={image} alt="img_" />
+              <img src={imageUrl} alt="img_" />
             </div>
             <div className="product-detail">
               <div className="product-quantity">
