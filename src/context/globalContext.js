@@ -1,11 +1,19 @@
-import { useContext, createContext, useReducer } from "react";
-import { productList } from "../data";
+import {
+  useContext,
+  createContext,
+  useReducer,
+  useState,
+  useEffect,
+} from "react";
+// import { productList } from "../data";
 import { reducer } from "../reducer/global-reducer";
+// import useAxiosGet from "../custom-hook/useAxiosGet";
+import axios from "axios";
 
 export const GlobalContext = createContext();
 
 const defaultState = {
-  products: productList,
+  products: [],
   cart: [],
   wishList: [],
   showModal: false,
@@ -13,10 +21,26 @@ const defaultState = {
 };
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
+  const [producta, setProducta] = useState([]);
   const closeModal = () => {
     dispatch({ type: "CLOSE_MODAL" });
   };
-
+  useEffect(() => {
+    async function leleData() {
+      try {
+        const response = await axios.get(
+          "https://cooking-stuff-backend.rosan.repl.co/api/products"
+        );
+        console.log(response.data.products);
+        setProducta(response.data.products);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    leleData();
+  }, []);
+  console.log(producta);
+  state.products = producta;
   return (
     <GlobalContext.Provider
       value={{
