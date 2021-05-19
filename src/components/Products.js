@@ -7,7 +7,6 @@ import Rating from "./Rating";
 export const Products = () => {
   const { state, dispatch } = useGlobal();
   const { filtered_products } = useFilterContext();
-
   const customStyle = {
     color: "red",
   };
@@ -25,12 +24,12 @@ export const Products = () => {
           {filtered_products.map((item) => {
             const { inStock } = item;
             return (
-              <div className="card" key={item.id}>
+              <div className="card" key={item._id}>
                 <div className="card-image">
-                  <img src={item.image} alt={item.id} />
+                  <img src={item.imageUrl} alt={item.title} />
 
                   <button
-                    style={wishItemToggle(item.id)}
+                    style={wishItemToggle(item._id)}
                     className="pointer-cursor"
                     onClick={() => {
                       dispatch({
@@ -50,12 +49,12 @@ export const Products = () => {
                   <div className="out-of-stock--tag">OUT OF STOCK</div>
                 </div>
                 <div className="card-content">
-                  <h4>Product name</h4>
+                  <h4>{item.title}</h4>
                   <Rating rating={item.rating} />
                   <p>₹ {item.price}</p>
                 </div>
                 <Link
-                  to={`/products/${item.id}`}
+                  to={`/products/${item._id}`}
                   className="link-to-page"
                 ></Link>
               </div>
