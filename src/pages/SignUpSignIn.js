@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import image1 from "../asset/sign-image1.jfif";
+import image2 from "../asset/sign-image2.jfif";
 import "./SignUpSignIn.css";
 
 function SignUpSignIn() {
@@ -12,10 +14,7 @@ function SignUpSignIn() {
       <div className={addClass ? "container" : "container active"}>
         <div className="user signinBx">
           <div className="imgBx">
-            <img
-              src="https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
-              alt="img_"
-            />
+            <img src={image1} alt="img_" />
           </div>
           <div className="formBx">
             <form action="">
@@ -50,10 +49,7 @@ function SignUpSignIn() {
             </form>
           </div>
           <div className="imgBx">
-            <img
-              src="https://images.unsplash.com/photo-1591277382575-ce798b25def5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80"
-              alt="img_"
-            />
+            <img src={image2} alt="img_" />
           </div>
         </div>
       </div>
