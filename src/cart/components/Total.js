@@ -1,6 +1,6 @@
 import React from "react";
 import "./total.css";
-import { useGlobal } from "../context/globalContext";
+import { useGlobal } from "../../context/globalContext";
 export const Total = () => {
   const { state } = useGlobal();
   return (

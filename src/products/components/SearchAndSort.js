@@ -1,5 +1,5 @@
 import React from "react";
-import { useFilterContext } from "../context/filterContext";
+import { useFilterContext } from "../../context/filterContext";
 
 function SearchAndSort() {
   const { sort, updateSort } = useFilterContext();

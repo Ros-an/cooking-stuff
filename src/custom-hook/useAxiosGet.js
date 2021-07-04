@@ -12,7 +12,7 @@ function useAxiosGet(url) {
       console.log(err);
     }
   }
-  //   leleData();
+  leleData();
 
   return { getProduct };
 }

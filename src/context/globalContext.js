@@ -5,7 +5,6 @@ import {
   useState,
   useEffect,
 } from "react";
-// import { productList } from "../data";
 import { reducer } from "../reducer/global-reducer";
 // import useAxiosGet from "../custom-hook/useAxiosGet";
 import axios from "axios";
@@ -21,7 +20,7 @@ const defaultState = {
 };
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
-  const [producta, setProducta] = useState([]);
+  const [products, setProducts] = useState([]);
   const closeModal = () => {
     dispatch({ type: "CLOSE_MODAL" });
   };
@@ -32,15 +31,15 @@ export const GlobalProvider = ({ children }) => {
           "https://cooking-stuff-backend.rosan.repl.co/api/products"
         );
         console.log(response.data.products);
-        setProducta(response.data.products);
+        setProducts(response.data.products);
       } catch (err) {
         console.log(err);
       }
     }
     leleData();
   }, []);
-  console.log(producta);
-  state.products = producta;
+  console.log(products);
+  state.products = products;
   return (
     <GlobalContext.Provider
       value={{

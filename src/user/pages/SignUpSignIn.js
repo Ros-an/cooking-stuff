@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import image1 from "../asset/sign-image1.jfif";
-import image2 from "../asset/sign-image2.jfif";
+import image1 from "../../asset/sign-image1.jfif";
+import image2 from "../../asset/sign-image2.jfif";
 import "./SignUpSignIn.css";
 
 function SignUpSignIn() {

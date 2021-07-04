@@ -1,6 +1,6 @@
-import { useGlobal } from "../context/globalContext";
+import { useGlobal } from "../../context/globalContext";
 import { Link } from "react-router-dom";
-import { useFilterContext } from "../context/filterContext";
+import { useFilterContext } from "../../context/filterContext";
 import SearchAndSort from "./SearchAndSort";
 import Rating from "./Rating";
 

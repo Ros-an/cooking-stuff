@@ -1,9 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useGlobal } from "../context/globalContext";
-import Rating from "../components/Rating";
-
-import "./wishlist.css";
+import { useGlobal } from "../../context/globalContext";
+import Rating from "../../products/components/Rating";
+import "./Wishlist.css";
 function WishList() {
   const { state, dispatch } = useGlobal();
   if (state.wishList.length === 0) {

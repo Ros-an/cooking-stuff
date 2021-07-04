@@ -1,4 +1,4 @@
-import "./buttons.css";
+import "./Buttons.css";
 import { NavLink } from "react-router-dom";
 
 export const AllProducts = () => {

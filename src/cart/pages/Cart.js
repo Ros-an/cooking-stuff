@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./cart.css";
-import { useGlobal } from "../context/globalContext";
+import { useGlobal } from "../../context/globalContext";
 import { CartItem } from "../components/CartItem";
 import { Total } from "../components/Total";
 

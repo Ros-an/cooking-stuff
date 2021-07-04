@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./productpage.css";
-import { useGlobal } from "../context/globalContext";
+import { useGlobal } from "../../context/globalContext";
 import { useParams, NavLink } from "react-router-dom";
 import Rating from "../components/Rating";
-import Loading from "./Loader";
+import Loader from "../../shared/Loader";
+import "./SingleProduct.css";
 
-function ProductPage() {
+function SingleProduct() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showLess, setShowLess] = useState(true);
@@ -30,7 +30,7 @@ function ProductPage() {
     getData();
   }, [id]);
   if (loading) {
-    return <Loading />;
+    return <Loader />;
   }
   return (
     <>
@@ -92,4 +92,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default SingleProduct;
