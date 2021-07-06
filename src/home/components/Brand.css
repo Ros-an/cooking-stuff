@@ -20,17 +20,23 @@
   justify-content: center;
   flex: 1 1 200px;
   margin: 0.55rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 4px 2px #ffb70e2d;
-  transition: all 0.3s ease-out;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-out;
   cursor: default;
 }
 
 .brand .brand__item:hover {
   transform: translateY(-5px);
+  border: none;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.11), 0 12px 12px rgba(0, 0, 0, 0.11);
+  background: var(--e-primary);
 }
 
-.brand .brand__item:hover {
-  background: var(--e-primary);
+@media screen and (max-width: 450px) {
+  .brand .brand__item {
+    height: 10rem;
+    flex: 1 0 150px;
+  }
 }
