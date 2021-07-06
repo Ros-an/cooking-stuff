@@ -5,17 +5,15 @@ import { Cart } from "./cart/pages/Cart";
 import { Footer } from "./shared/Footer";
 import { AllProducts } from "./products/pages/AllProducts";
 import Navbar from "./shared/Navbar";
-import { Modal } from "./shared/Modal";
-import { useGlobal } from "./context/globalContext";
 import WishList from "./wishlist/pages/WishList";
 import SingleProduct from "./products/pages/SingleProduct";
 import SignUpSignIn from "./user/pages/SignUpSignIn";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const { state } = useGlobal();
   return (
     <>
-      {state.showModal && <Modal />}
       <Navbar />
       <main>
         <Routes>
@@ -27,6 +25,7 @@ function App() {
           <Route path="/authenticate" element={<SignUpSignIn />} />
         </Routes>
       </main>
+      <ToastContainer />
       <Footer />
     </>
   );
