@@ -1,10 +1,19 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useGlobal } from "../context/globalContext";
-const NavBar = () => {
+import { auth } from "../firebase/firebase";
+import { useAuthContext } from "../context/authContext";
+function NavBar() {
   const { state } = useGlobal();
+  let navigate = useNavigate();
+  const { userData, setUserData } = useAuthContext();
   const { cart, wishList } = state;
+  const logout = () => {
+    auth.signOut();
+    setUserData(null);
+    navigate(`/authenticate`);
+  };
   return (
     <div className="container-flex navbar">
       <div className="logo pointer-cursor nav-item--effect">
@@ -47,17 +56,20 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-        <NavLink to="/authenticate">
-          <div className="login pointer-cursor nav-item--effect">
-            <span className="logo-large">SignIn</span>
-            <span className="logo-small">
-              <i className="far fa-user-circle"></i>
-            </span>
+        {!userData ? (
+          <NavLink to="/authenticate">
+            <div className="login pointer-cursor nav-item--effect">
+              <span className="logo-large">SignIn</span>
+            </div>
+          </NavLink>
+        ) : (
+          <div className="pointer-cursor nav-item--effect" onClick={logout}>
+            SignOut
           </div>
-        </NavLink>
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default NavBar;
