@@ -29,11 +29,3 @@ main {
 .cart-count {
   margin-left: 1vw;
 }
-.alert {
-  position: fixed;
-  font-family: inherit;
-  bottom: 4vw;
-  right: 2vw;
-  transition: 0.5s;
-  z-index: 1000;
-}
