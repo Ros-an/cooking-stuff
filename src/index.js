@@ -4,13 +4,16 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalProvider } from "./context/globalContext";
 import { FilterProvider } from "./context/filterContext";
+import AuthProvider from "./context/authContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <GlobalProvider>
         <FilterProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </FilterProvider>
       </GlobalProvider>
     </Router>
