@@ -10,8 +10,6 @@ export const reducer = (state, action) => {
         ...state,
         products: newProducts,
         cart: cart.concat(payLoad),
-        showModal: true,
-        modalContent: "added to cart",
       };
     case "REMOVE_FROM_CART":
       const newCart = cart.filter((item) => item.id !== payLoad);
@@ -22,8 +20,6 @@ export const reducer = (state, action) => {
         ...state,
         products: newProducts1,
         cart: newCart,
-        showModal: true,
-        modalContent: "removed from cart",
       };
     case "COUNT_UP":
       const newCart1 = cart.map((item) =>
@@ -53,15 +49,11 @@ export const reducer = (state, action) => {
         return {
           ...state,
           wishList: newWishL,
-          showModal: true,
-          modalContent: "removed from wishlist!!",
         };
       }
       return {
         ...state,
         wishList: [...wishList, payLoad],
-        showModal: true,
-        modalContent: "added to wishlist!!",
       };
     case "REMOVE_FROM_WISHLIST":
       const newWishL1 = wishList.filter((item) => item.id !== payLoad);
@@ -73,15 +65,11 @@ export const reducer = (state, action) => {
       if (wishList.some((e) => e.id === payLoad.id)) {
         return {
           ...state,
-          showModal: true,
-          modalContent: "already there!",
         };
       }
       return {
         ...state,
         wishList: [...wishList, payLoad],
-        showModal: true,
-        modalContent: "added",
       };
     case "ADD_TO_CART_FROM_WISHLIST":
       if (cart.some((e) => e.id === payLoad.id)) {
@@ -100,11 +88,7 @@ export const reducer = (state, action) => {
         ...state,
         products: newProducts2,
         cart: cart.concat(payLoad),
-        showModal: true,
-        modalContent: "added!",
       };
-    case "CLOSE_MODAL":
-      return { ...state, showModal: false };
     default:
       return { ...state };
   }
