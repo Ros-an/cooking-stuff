@@ -6,6 +6,7 @@ import {
   useEffect,
 } from "react";
 import { reducer } from "../reducer/global-reducer";
+import "react-toastify/dist/ReactToastify.css";
 // import useAxiosGet from "../custom-hook/useAxiosGet";
 import axios from "axios";
 
@@ -15,22 +16,17 @@ const defaultState = {
   products: [],
   cart: [],
   wishList: [],
-  showModal: false,
-  modalContent: "",
 };
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const [products, setProducts] = useState([]);
-  const closeModal = () => {
-    dispatch({ type: "CLOSE_MODAL" });
-  };
+
   useEffect(() => {
     async function leleData() {
       try {
         const response = await axios.get(
           "https://cooking-stuff-backend.rosan.repl.co/api/products"
         );
-        console.log(response.data.products);
         setProducts(response.data.products);
       } catch (err) {
         console.log(err);
@@ -38,14 +34,12 @@ export const GlobalProvider = ({ children }) => {
     }
     leleData();
   }, []);
-  console.log(products);
   state.products = products;
   return (
     <GlobalContext.Provider
       value={{
         state,
         dispatch,
-        closeModal,
       }}
     >
       {children}
