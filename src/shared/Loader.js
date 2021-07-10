@@ -21,5 +21,11 @@ const Loader = () => {
     </main>
   );
 };
-
+export const MiniLoader = ({ spinner, size }) => {
+  return (
+    <div className={`${spinner ? "white-circle" : "lds-circle"}`}>
+      <div style={size}></div>
+    </div>
+  );
+};
 export default Loader;
