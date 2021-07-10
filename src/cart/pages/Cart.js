@@ -1,13 +1,14 @@
 import React from "react";
+import Loader from "../../shared/Loader";
 import { NavLink } from "react-router-dom";
 import "./cart.css";
-import { useGlobal } from "../../context/globalContext";
+import { useCartContext } from "../../context/cartContext";
 import { CartItem } from "../components/CartItem";
 import { Total } from "../components/Total";
 
 export const Cart = () => {
-  const { state, dispatch } = useGlobal();
-  if (state.cart.length === 0) {
+  const { cart } = useCartContext();
+  if (cart?.length === 0) {
     return (
       <div
         style={{
@@ -37,15 +38,21 @@ export const Cart = () => {
       </div>
     );
   }
+
+  if (!cart) {
+    return <Loader />;
+  }
   return (
     <>
       <div className="cart-headsection">
         <p className="section-heading">CART ITEM</p>
-        <p className="cart-count">No. of item: {state.cart.length}</p>
+        <p className="cart-count">No. of item: {cart?.length}</p>
       </div>
       <div className="cart-bodysection">
         <div className="cart-block">
-          <CartItem state={state} dispatch={dispatch} />
+          {cart?.map((item) => {
+            return <CartItem {...item} key={item._id} />;
+          })}
         </div>
         <Total />
       </div>

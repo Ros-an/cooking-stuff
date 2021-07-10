@@ -50,8 +50,9 @@
   background: red;
 }
 .horizontal-card__button .wish-btn {
-  background: orange;
-  border-color: orange;
+  background: var(--e-primary);
+  min-width: 6rem;
+  border-color: var(--e-primary);
 }
 .horizontal-card__button .remove-btn:active {
   outline: 1px solid rgba(0, 0, 0, 0.5);
