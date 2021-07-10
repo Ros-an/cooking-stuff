@@ -1,0 +1,16 @@
+.footer {
+  background: var(--e-secondary);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 3rem 0rem;
+}
+
+.footer--heading {
+  color: white;
+  font-size: 1.25rem;
+}
+.footer .image img {
+  height: 1.5rem;
+  width: 3rem;
+}
