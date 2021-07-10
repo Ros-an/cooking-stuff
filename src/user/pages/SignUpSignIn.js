@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import image1 from "../../asset/sign-image1.jfif";
-import image2 from "../../asset/sign-image2.jfif";
+import image1 from "../../asset/sign-image1.jpg";
+import image2 from "../../asset/sign-image2.jpg";
+import SignUp from "../components/SignUp";
+import SignIn from "../components/SignIn";
+
 import "./SignUpSignIn.css";
 
 function SignUpSignIn() {
@@ -16,38 +18,10 @@ function SignUpSignIn() {
           <div className="imgBx">
             <img src={image1} alt="img_" />
           </div>
-          <div className="formBx">
-            <form action="">
-              <h2>Sign In</h2>
-              <input type="text" name="" placeholder="Username" />
-              <input type="password" name="" placeholder="Password" />
-              <input type="submit" name="" value="Login" />
-              <p className="signup">
-                Don't have an account ?
-                <Link to="#" onClick={() => toggleForm()}>
-                  Sign Up.
-                </Link>
-              </p>
-            </form>
-          </div>
+          <SignIn toggleForm={toggleForm} />
         </div>
         <div className="user signupBx">
-          <div className="formBx">
-            <form action="">
-              <h2>Create an account</h2>
-              <input type="text" name="" placeholder="Username" />
-              <input type="email" name="" placeholder="Email Address" />
-              <input type="password" name="" placeholder="Create Password" />
-              <input type="password" name="" placeholder="Confirm Password" />
-              <input type="submit" name="" value="Sign Up" />
-              <p className="signup">
-                Already have an account ?
-                <Link to="#" onClick={() => toggleForm()}>
-                  Sign in.
-                </Link>
-              </p>
-            </form>
-          </div>
+          <SignUp toggleForm={toggleForm} />
           <div className="imgBx">
             <img src={image2} alt="img_" />
           </div>

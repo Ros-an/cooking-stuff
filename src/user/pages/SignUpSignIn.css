@@ -80,13 +80,15 @@ section .container .user .formBx form input {
   font-weight: 300;
 }
 
-section .container .user .formBx form input[type="submit"] {
-  max-width: 100px;
+section .container .user .formBx form button {
+  width: 100px;
   background: #677eff;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
+  height: 2rem;
+  border-color: #677eff;
+  font-family: inherit;
   letter-spacing: 1px;
   transition: 0.5s;
 }
@@ -146,7 +148,22 @@ section .container .signinBx .imgBx {
 section .container.active .signinBx .imgBx {
   left: -100%;
 }
+/* ----password visibility section ----- */
+.password-section {
+  position: relative;
+}
+.password-section .password-visibility {
+  position: absolute;
+  right: 0.5rem;
+  top: 0;
+  transform: translateY(90%);
+}
+.password-section .password-visibility .icon {
+  color: gray;
+  cursor: pointer;
+}
 
+/* ==================================== */
 @media (max-width: 991px) {
   section .container {
     max-width: 400px;
