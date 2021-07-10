@@ -1,15 +1,18 @@
 import React from "react";
 import "./total.css";
-import { useGlobal } from "../../context/globalContext";
+import { useCartContext } from "../../context/cartContext";
 export const Total = () => {
-  const { state } = useGlobal();
+  const { cart } = useCartContext();
+  function getTotalAmt(total, prod) {
+    return total + prod.product.price * prod.quantity;
+  }
   return (
     <div className="price-detail">
       <div className="price-detail--heading">Price Details</div>
       <div className="price-detail__calculation">
         <div className="price">
-          <p>Price{`(${state.cart.length} item)`}</p>
-          <p>Rs. 00</p>
+          <p>Price{`(${cart?.length} item)`}</p>
+          <p>Rs. {cart?.reduce(getTotalAmt, 0)}</p>
         </div>
         <div className="delivery-charge">
           <p>Delivery Charge</p>
@@ -18,11 +21,8 @@ export const Total = () => {
       </div>
       <div className="price-detail__amount">
         <p>Total Amount:</p>
-        <p>Rs 000</p>
+        <p>Rs {cart?.reduce(getTotalAmt, 0)}</p>
       </div>
-      <button className="price-detail--checkout pointer-cursor">
-        CHECKOUT
-      </button>
     </div>
   );
 };
