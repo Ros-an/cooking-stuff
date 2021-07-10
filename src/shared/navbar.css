@@ -1,6 +1,5 @@
 .navbar {
   background: var(--e-primary);
-  color: var(--e-secondary);
   font-weight: 500;
   position: fixed;
   top: 0;
@@ -12,29 +11,37 @@
 .navbar .logo {
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--e-secondary);
+  color: var(--navbar);
   padding: 0.4rem 0.45rem;
   border: 2px solid white;
 }
+
 .navbar .logo-small {
   display: none;
 }
-.nav-item--effect {
-  font-size: 1.1rem;
-  padding: 0 0.25rem;
-  border-bottom: 2px solid transparent;
-  transition: 0.5s;
+.nav-item--effect:hover,
+.navbar a {
+  color: var(--navbar);
 }
 .navbar a {
   text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
 }
-.home:hover,
-.login:hover {
-  padding: 0 0.25rem;
-  border-bottom: 2px solid rgba(104, 11, 11, 0.7);
+.navbar a:active,
+.navbar a.active {
+  color: black;
+  border-bottom: 2px solid black;
+  transition: all 0.2s linear;
 }
-.badge-icon .icon {
-  font-size: 1.75rem;
+
+.nav-item--effect {
+  font-size: 1.1rem;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s;
+}
+.nav-icon {
+  font-size: 1.5rem;
   color: var(--e-secondary);
 }
 .about {
@@ -47,7 +54,7 @@
   padding-top: 0.05rem;
 }
 
-@media (max-width: 670px) {
+@media screen and (max-width: 580px) {
   .navbar .logo {
     color: var(--e-secondary);
     padding: 0.4rem 0.75rem;
@@ -56,12 +63,12 @@
     box-shadow: 0 0 4px 2px inset rgba(0, 0, 0, 0.11);
     font-size: 1.25rem;
   }
+  .navbar .logo-large {
+    display: none;
+  }
   .navbar .logo-small {
     display: block;
     font-size: 1.25rem;
     color: var(--e-secondary);
-  }
-  .badge-icon .icon {
-    font-size: 1.5rem;
   }
 }
