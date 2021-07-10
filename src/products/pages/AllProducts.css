@@ -88,7 +88,7 @@
 }
 .card .out-of-stock {
   position: absolute;
-  background: rgba(179, 176, 176, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
   height: 100%;
   width: 100%;
@@ -129,7 +129,7 @@
 }
 .card .link-to-page {
   position: absolute;
-  background: rgba(179, 176, 176, 0);
+  background: rgba(0, 0, 0, 0);
   z-index: 1;
   height: 100%;
   width: 100%;
