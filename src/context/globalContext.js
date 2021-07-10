@@ -20,12 +20,13 @@ const defaultState = {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function leleData() {
       try {
         const response = await axios.get(
-          "https://cooking-stuff-backend.rosan.repl.co/api/products"
+          `${process.env.REACT_APP_API}/products`
         );
         setProducts(response.data.products);
       } catch (err) {
@@ -40,6 +41,8 @@ export const GlobalProvider = ({ children }) => {
       value={{
         state,
         dispatch,
+        error,
+        setError,
       }}
     >
       {children}
