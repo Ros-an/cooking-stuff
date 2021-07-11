@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Error({ message }) {
+export function Error({ message }) {
   return (
     <div className="error-page">
       <p style={{ fontSize: "1.25rem", margin: "0" }}>
@@ -13,4 +14,12 @@ function Error({ message }) {
   );
 }
 
-export default Error;
+export const NotFound = () => {
+  return (
+    <div className="error-page">
+      <h2 style={{ fontSize: "1.25rem", margin: "0.5rem" }}>404</h2>
+      <p style={{ fontSize: "1.25rem", margin: "0.5rem" }}>PAGE NOT FOUND</p>
+      <Link to="/">Home</Link>
+    </div>
+  );
+};

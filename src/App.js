@@ -14,7 +14,7 @@ import { useAuthContext } from "./context/authContext";
 import { useGlobal } from "./context/globalContext";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./shared/Loader";
-import Error from "./shared/Error";
+import { Error, NotFound } from "./shared/Error";
 // import Spinner from "./asset/spinner.svg";
 function App() {
   const { error } = useGlobal();
@@ -36,6 +36,7 @@ function App() {
           <PrivateRoute path="/wishlist" element={<WishList />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/authenticate" element={<SignUpSignIn />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <ToastContainer />
