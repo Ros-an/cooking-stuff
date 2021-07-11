@@ -9,9 +9,15 @@ export const Products = () => {
       <div className="product-block">
         <SearchAndSort />
         <div className="product-part">
-          {filtered_products.map((item) => {
-            return <ProductItem key={item._id} item={item} />;
-          })}
+          {filtered_products.length ? (
+            filtered_products.map((item) => {
+              return <ProductItem key={item._id} item={item} />;
+            })
+          ) : (
+            <h3 style={{ margin: "1rem", fontWeight: "500" }}>
+              No product found.
+            </h3>
+          )}
         </div>
       </div>
     </>
