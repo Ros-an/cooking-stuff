@@ -2,25 +2,44 @@ import React from "react";
 import { useFilterContext } from "../../context/filterContext";
 
 function SearchAndSort() {
-  const { sort, updateSort } = useFilterContext();
+  const {
+    sort,
+    updateSort,
+    filters: { text },
+    updateFilters,
+    setToggle,
+  } = useFilterContext();
   return (
     <div className="sort-and-search">
       <div className="search">
-        <input type="search" name="search" />
-        <button className="pointer-cursor">search</button>
+        <input
+          type="text"
+          name="text"
+          value={text}
+          placeholder="search"
+          onChange={updateFilters}
+        />
       </div>
       <div className="sort">
-        <span>Sort By Price:</span>
-        <select
-          name="sort"
-          id="sort"
-          className="pointer-cursor"
-          value={sort}
-          onChange={updateSort}
+        <h4
+          className="sort-option pointer-cursor"
+          onClick={() => setToggle((prev) => !prev)}
         >
-          <option value="low-to-high">Low to High</option>
-          <option value="high-to-low">High to Low</option>
-        </select>
+          Filters
+        </h4>
+        <div className="sort-price">
+          <h4>Sort By Price:</h4>
+          <select
+            name="sort"
+            id="sort"
+            className="pointer-cursor"
+            value={sort}
+            onChange={updateSort}
+          >
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
+          </select>
+        </div>
       </div>
     </div>
   );
