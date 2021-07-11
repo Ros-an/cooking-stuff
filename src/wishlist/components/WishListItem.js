@@ -18,30 +18,32 @@ function WishListItem({ item }) {
     addToCart(userData._id, item._id, setLoaderOne, setCart);
   };
   return (
-    <div className="card">
-      <div className="card-image">
-        <img src={item.imageUrl} alt="img_" />
-        <span
-          className="card-badge--remove pointer-cursor"
-          onClick={() => removeItem()}
+    <>
+      <div className="card">
+        <div className="card-image">
+          <img src={item.imageUrl} alt="img_" />
+          <span
+            className="card-badge--remove pointer-cursor"
+            onClick={() => removeItem()}
+          >
+            {loader ? (
+              <MiniLoader size={{ height: "1em", width: "1em" }} />
+            ) : (
+              <i className="far fa-times-circle"></i>
+            )}
+          </span>
+        </div>
+        <div
+          className="out-of-stock"
+          style={{ visibility: item.inStock ? "hidden" : "visible" }}
         >
-          {loader ? (
-            <MiniLoader size={{ height: "1em", width: "1em" }} />
-          ) : (
-            <i className="far fa-times-circle"></i>
-          )}
-        </span>
-      </div>
-      <div
-        className="out-of-stock"
-        style={{ visibility: item.inStock ? "hidden" : "visible" }}
-      >
-        <div className="out-of-stock--tag">OUT OF STOCK</div>
-      </div>
-      <div className="card-content">
-        <h4>{item.title}</h4>
-        <Rating rating={item.rating} />
-        <p>Rs.{item.price}</p>
+          <div className="out-of-stock--tag">OUT OF STOCK</div>
+        </div>
+        <div className="card-content">
+          <h4>{item.title}</h4>
+          <Rating rating={item.rating} />
+          <p>Rs.{item.price}</p>
+        </div>
         <div className="wishlist-btn">
           <button
             disabled={!item.inStock}
@@ -51,7 +53,7 @@ function WishListItem({ item }) {
           >
             {" "}
             {loaderOne ? (
-              <MiniLoader size={{ height: "1em", width: "1em" }} />
+              <MiniLoader size={{ height: "1.1em", width: "1.1em" }} />
             ) : present(cart, item._id) ? (
               "ADDED"
             ) : (
@@ -60,7 +62,7 @@ function WishListItem({ item }) {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
