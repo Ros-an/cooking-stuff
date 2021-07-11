@@ -20,11 +20,12 @@
 }
 .wishlist__card-section .card-content {
   padding: 0;
+  position: relative;
 }
 .wishlist__card-section .card-badge--remove {
   right: 0.3rem;
 }
-.wishlist__card-section .wishlist-btn {
+.wishlist__card-section .card {
   position: relative;
 }
 .wishlist__card-section .wishlist-btn button {
@@ -32,18 +33,21 @@
   font-family: inherit;
   border-color: var(--e-primary);
   font-size: 1rem;
-  padding: 0.5rem 0;
+  height: 2.5rem;
   background: var(--e-primary);
   color: var(--e-secondary);
   font-weight: 500;
   z-index: 2;
-  position: absolute;
   transform: translateY(100%);
+  position: absolute;
   bottom: 0;
   left: 0;
 }
 
 @media screen and (max-width: 910px) {
+  .wishlist {
+    margin: 7rem 0 0;
+  }
   .wishlist__card-section {
     padding: 0;
   }
