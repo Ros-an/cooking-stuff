@@ -23,7 +23,7 @@ export const GlobalProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function leleData() {
+    async function getProduct() {
       try {
         const response = await axios.get(
           `${process.env.REACT_APP_API}/products`
@@ -33,7 +33,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(err);
       }
     }
-    leleData();
+    getProduct();
   }, []);
   state.products = products;
   return (
