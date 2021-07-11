@@ -4,15 +4,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 import { useAuthContext } from "../context/authContext";
 import { useCartContext } from "../context/cartContext";
-
+import { useFilterContext } from "../context/filterContext";
 function NavBar() {
   const { cart, setCart } = useCartContext();
+  const { clearFilters } = useFilterContext();
   let navigate = useNavigate();
   const { userData, setUserData } = useAuthContext();
   const logout = () => {
     auth.signOut();
     setUserData(null);
     setCart(null);
+    clearFilters();
   };
   return (
     <div className="container-flex navbar">
