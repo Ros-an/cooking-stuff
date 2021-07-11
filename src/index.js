@@ -11,13 +11,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <GlobalProvider>
-        <AuthProvider>
-          <FilterProvider>
+        <FilterProvider>
+          <AuthProvider>
             <CartProvider>
               <App />
             </CartProvider>
-          </FilterProvider>
-        </AuthProvider>
+          </AuthProvider>
+        </FilterProvider>
       </GlobalProvider>
     </Router>
   </React.StrictMode>,
