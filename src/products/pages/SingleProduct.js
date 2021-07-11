@@ -103,7 +103,7 @@ function SingleProduct() {
                 >
                   {loader ? (
                     <MiniLoader spinner={true} />
-                  ) : present(userData.wishlist, product._id) ? (
+                  ) : present(userData?.wishlist, product._id) ? (
                     "ADDED"
                   ) : (
                     "ADD TO WISH"
