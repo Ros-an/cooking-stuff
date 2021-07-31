@@ -1,21 +1,23 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./home/Home";
-import { Cart } from "./cart/pages/Cart";
-import { Footer } from "./shared/Footer";
 import { AllProducts } from "./products/pages/AllProducts";
-import Navbar from "./shared/Navbar";
-import WishList from "./wishlist/pages/WishList";
-import SingleProduct from "./products/pages/SingleProduct";
-import SignUpSignIn from "./user/pages/SignUpSignIn";
+import { Cart } from "./cart/pages/Cart";
+import { Error, NotFound } from "./shared/Error";
+import { Footer } from "./shared/Footer";
+import { Home } from "./home/Home";
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import PrivateRoute from "./private/PrivateRoute";
 import { useAuthContext } from "./context/authContext";
 import { useGlobal } from "./context/globalContext";
-import "react-toastify/dist/ReactToastify.css";
+import Checkout from "./cart/pages/Checkout";
 import Loader from "./shared/Loader";
-import { Error, NotFound } from "./shared/Error";
-// import Spinner from "./asset/spinner.svg";
+import Navbar from "./shared/Navbar";
+import SingleProduct from "./products/pages/SingleProduct";
+import SignUpSignIn from "./user/pages/SignUpSignIn";
+import PrivateRoute from "./private/PrivateRoute";
+import WishList from "./wishlist/pages/WishList";
+import "react-toastify/dist/ReactToastify.css";
+
+
 function App() {
   const { error } = useGlobal();
   const { loader } = useAuthContext();
@@ -32,8 +34,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <PrivateRoute path="/cart" element={<Cart />} />
-          <Route path="/products/:id" element={<SingleProduct />} />
           <PrivateRoute path="/wishlist" element={<WishList />} />
+          <PrivateRoute path="/checkout" element={<Checkout />} />
+          <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/authenticate" element={<SignUpSignIn />} />
           <Route path="*" element={<NotFound />} />

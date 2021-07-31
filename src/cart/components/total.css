@@ -21,14 +21,15 @@
   font-weight: 500;
   border-top: 1px dashed var(--e-primary);
 }
-.price-detail .price-detail--checkout {
+
+.price-detail .checkout {
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
-  width: 40%;
-  color: white;
-  margin-top: 0.5rem;
-  border-color: var(--e-secondary);
-  background: var(--e-secondary);
+  width: 100%;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  border-color: var(--e-primary);
+  background: var(--e-primary);
   font-weight: 500;
   font-family: inherit;
 }
