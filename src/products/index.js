@@ -22,6 +22,7 @@ export const addToWishList = async (
     setLoader(false);
   }
 };
+
 export const addToCart = async (userId, productId, setLoaderOne, setCart) => {
   try {
     setLoaderOne(true);

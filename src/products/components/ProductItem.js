@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { MiniLoader } from "../../shared/Loader";
 import Rating from "./Rating";
-// import { useGlobal } from "../../context/globalContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";
 import { addToWishList, toggleWishListItem } from "../index";
 
 function ProductItem({ item }) {
-  // const { state, dispatch } = useGlobal();
   const { userData, setUserData } = useAuthContext();
   const [loader, setLoader] = useState(false);
   let navigate = useNavigate();
