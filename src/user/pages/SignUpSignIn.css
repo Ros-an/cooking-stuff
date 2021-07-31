@@ -92,7 +92,17 @@ section .container .user .formBx form button {
   letter-spacing: 1px;
   transition: 0.5s;
 }
-
+section .container .user .formBx form .login-as-guest {
+  min-width: 150px;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0.5rem;
+  background: var(--e-primary);
+  border-color: var(--e-primary);
+  color: black;
+}
 section .container .user .formBx form .signup {
   position: relative;
   margin-top: 20px;

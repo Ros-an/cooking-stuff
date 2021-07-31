@@ -21,7 +21,7 @@ function SignIn({ toggleForm }) {
     setInputField((prev) => ({ ...prev, [name]: value }));
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     setLoading(true);
     try {
       const result = await auth.signInWithEmailAndPassword(email, password);
@@ -46,6 +46,12 @@ function SignIn({ toggleForm }) {
       setLoading(false);
     }
   };
+  const loginAsGuest = () =>{
+    setInputField({
+      email: "roshan@gmail.com",
+      password: "@roshan12",
+    })
+  }
   return (
     <div className="formBx">
       <form onSubmit={handleSubmit}>
@@ -77,6 +83,7 @@ function SignIn({ toggleForm }) {
           </span>
         </div>
         <button type="submit">{loading ? "Signing..." : "Sign In"}</button>
+        <button className="login-as-guest" onClick={loginAsGuest}>Sign In as Guest</button>
         <p className="signup">
           Don't have an account ?
           <Link to="#" onClick={() => toggleForm()}>
