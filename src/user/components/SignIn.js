@@ -24,18 +24,10 @@ function SignIn({ toggleForm }) {
     e?.preventDefault();
     setLoading(true);
     try {
-      const result = await auth.signInWithEmailAndPassword(email, password);
-      const tokenResult = await result.user.getIdTokenResult();
-      getUserInfo(tokenResult.token)
-        .then((res) => {
-          navigate(state?.from ? state.from : `/`);
-          toast.info(`🤠Successfully Signed In.`, { position: "bottom-right" });
-        })
-        .catch((err) => {
-          alert(err.message);
-          setLoading(false);
-        });
-    } catch (error) {
+      await auth.signInWithEmailAndPassword(email, password);
+      navigate(state?.from ? state.from : `/`);
+      toast.info(`🤠Successfully Signed In.`, { position: "bottom-right" });
+      } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       if (errorCode === "auth/wrong-password") {
