@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 import { toast } from "react-toastify";
-import { getUserInfo } from "../../utils/index";
 // import { useAuthContext } from "../../context/authContext";
 // const { setUserData, setLoader } = useAuthContext();
 
