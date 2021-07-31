@@ -1,6 +1,6 @@
 import React from "react";
 import { useCartContext } from "../../context/cartContext";
-import "./Checkout.css";
+//import "./Checkout.css";
 function Checkout() {
   const { cart } = useCartContext();
   console.log(cart);
