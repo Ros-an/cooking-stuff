@@ -12,7 +12,7 @@ import axios from "axios";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const { userData } = useAuthContext();
+  const { userToken } = useAuthContext();
   const { setError } = useGlobal();
   const [cart, setCart] = useState(null);
   const getCart = useCallback(
@@ -32,8 +32,8 @@ export const CartProvider = ({ children }) => {
     [setError]
   );
   useEffect(() => {
-    userData && getCart(userData._id);
-  }, [getCart, userData]);
+    userToken && getCart(userToken._id);
+  }, [userToken, getCart]);
   return (
     <CartContext.Provider value={{ cart, setCart }}>
       {children}

@@ -12,6 +12,7 @@ export const AuthContext = createContext();
 function AuthProvider({ children }) {
   const { setError } = useGlobal();
   const [userData, setUserData] = useState(null);
+  const [userToken, setUserToken] = useState(null);
   const [loader, setLoader] = useState(true);
 
   const getUserData = useCallback(
@@ -21,9 +22,12 @@ function AuthProvider({ children }) {
         setUserData({
           _id: res.data.user._id,
           email: res.data.user.email,
-          token,
           wishlist: res.data.user.wishlist,
         });
+        setUserToken({
+          _id: res.data.user._id,
+          token
+        })
       } catch (err) {
         console.log(err.message);
         setError({ message: err.message });
@@ -48,7 +52,7 @@ function AuthProvider({ children }) {
     });
   }, [getUserData]);
   return (
-    <AuthContext.Provider value={{ setUserData, userData, loader, setLoader }}>
+    <AuthContext.Provider value={{ setUserData,userToken, userData, loader, setLoader }}>
       {children}
     </AuthContext.Provider>
   );
