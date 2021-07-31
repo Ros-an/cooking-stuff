@@ -68,9 +68,6 @@ function SingleProduct() {
       {!product && <Loader />}
       {product && (
         <>
-          {/* <NavLink to="/products">
-            <button className="back-btn">product page</button>
-          </NavLink> */}
           <div className="single-product">
             <div className="section-image">
               <img src={product.imageUrl} alt={product.title} />

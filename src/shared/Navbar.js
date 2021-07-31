@@ -5,6 +5,7 @@ import { auth } from "../firebase/firebase";
 import { useAuthContext } from "../context/authContext";
 import { useCartContext } from "../context/cartContext";
 import { useFilterContext } from "../context/filterContext";
+
 function NavBar() {
   const { cart, setCart } = useCartContext();
   const { clearFilters } = useFilterContext();
@@ -17,7 +18,7 @@ function NavBar() {
     clearFilters();
   };
   return (
-    <div className="container-flex navbar">
+    <div className="container-flex navbar" >
       <div className="logo pointer-cursor nav-item--effect">
         <div onClick={() => navigate(`/`)}>
           {" "}
