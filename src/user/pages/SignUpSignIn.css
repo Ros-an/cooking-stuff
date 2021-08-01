@@ -99,7 +99,8 @@ section .container .user .formBx form .login-as-guest {
   left: 50%;
   transform: translateX(-50%);
   margin: 0.5rem;
-  background: var(--e-primary);
+  background: transparent;
+  border-radius: 0.5rem;
   border-color: var(--e-primary);
   color: black;
 }
