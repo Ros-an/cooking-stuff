@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {useNavigate} from "react-router-dom";
 import {
   CardElement,
@@ -19,20 +19,24 @@ export default function CheckoutForm({amount, cart}) {
   let intervalId;
   
 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    async function createPayment (amount){
+  const createPayment = useCallback(
+    async function (){
         try{
             const {data} = await axios.post(`${process.env.REACT_APP_API}/create-payment-intent`,{
                 amount
             });
             setClientSecret(data.clientSecret);
+            console.log("1");
         }catch(err){
             console.log(err);
         }
     }
-    createPayment(amount);
-  }, []);
+      ,[amount])
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    
+    createPayment();
+  }, [createPayment]);
 
   const cardStyle = {
     style: {
@@ -101,9 +105,9 @@ export default function CheckoutForm({amount, cart}) {
         <p>No. of items: {cart?.length}</p>
         <p>Amount to Pay: Rs.{amount}</p>
     </div> :
-    <p className="result-message">
+    <h3 className="result-message">
          Payment successful!!
-    </p>}
+    </h3>}
     <form id="payment-form" onSubmit={handleSubmit}>
       <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
       <button
