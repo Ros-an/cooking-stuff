@@ -1,10 +1,10 @@
 import React from "react";
 import "./total.css";
 import { useCartContext } from "../../context/cartContext";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const Total = () => {
   const { cart } = useCartContext();
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   function getTotalAmt(total, prod) {
     return total + prod.product.price * prod.quantity;
   }
@@ -25,9 +25,9 @@ export const Total = () => {
         <p>Total Amount:</p>
         <p>Rs {cart?.reduce(getTotalAmt, 0)}</p>
       </div>
-      {/* <button className="checkout" onClick={() => navigate(`/checkout`)}>
+      <button className="checkout" onClick={() => navigate(`/checkout`)}>
         PROCEED TO CHECKOUT
-      </button> */}
+      </button>
     </div>
   );
 };
