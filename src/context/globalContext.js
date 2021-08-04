@@ -21,6 +21,7 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getProduct() {
@@ -32,6 +33,7 @@ export const GlobalProvider = ({ children }) => {
       } catch (err) {
         console.log(err);
       }
+      setLoading(false);
     }
     getProduct();
   }, []);
@@ -43,6 +45,7 @@ export const GlobalProvider = ({ children }) => {
         dispatch,
         error,
         setError,
+        loading
       }}
     >
       {children}
