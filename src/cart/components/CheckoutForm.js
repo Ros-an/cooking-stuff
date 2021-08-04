@@ -5,6 +5,7 @@ import {
   useStripe,
   useElements
 } from "@stripe/react-stripe-js";
+import axios from "axios";
 
 export default function CheckoutForm({amount, cart}) {
   const [succeeded, setSucceeded] = useState(false);
@@ -20,21 +21,18 @@ export default function CheckoutForm({amount, cart}) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    window
-      .fetch(`${process.env.REACT_APP_API}/create-payment-intent`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({amount})
-      })
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        setClientSecret(data.clientSecret);
-      });
-  }, [amount]);
+    async function createPayment (amount){
+        try{
+            const {data} = await axios.post(`${process.env.REACT_APP_API}/create-payment-intent`,{
+                amount
+            });
+            setClientSecret(data.clientSecret);
+        }catch(err){
+            console.log(err);
+        }
+    }
+    createPayment(amount);
+  }, []);
 
   const cardStyle = {
     style: {
