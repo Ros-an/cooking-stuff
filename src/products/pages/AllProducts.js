@@ -1,21 +1,18 @@
-import { useFilterContext } from "../../context/filterContext";
 import { Products } from "../components/Products";
 import Filter from "../components/Filter";
+import {useGlobal} from "../../context/globalContext";
 import Loader from "../../shared/Loader";
-
 import "./AllProducts.css";
 
 export const AllProducts = () => {
-  const { filtered_products } = useFilterContext();
-
-  if (!filtered_products) {
-    return <Loader />;
-  }
+  const {loading} = useGlobal();
 
   return (
-    <div className="product-section">
+    <>
+      {loading ? <Loader /> : <div className="product-section">
       <Filter />
       <Products />
-    </div>
+    </div>}
+    </>
   );
 };
