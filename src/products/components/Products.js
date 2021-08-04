@@ -13,7 +13,7 @@ export const Products = () => {
             filtered_products.map((item) => {
               return <ProductItem key={item._id} item={item} />;
             })}
-            {filtered_products.length === 0 &&  <h3 style={{ margin: "1rem", fontWeight: "500" }}>
+            {!filtered_products.length &&  <h3 style={{ margin: "1rem", fontWeight: "500" }}>
               No product found.
             </h3>}
         </div>
