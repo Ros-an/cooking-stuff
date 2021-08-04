@@ -1,49 +1,29 @@
 import React from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "../components/CheckoutForm";
 import { useCartContext } from "../../context/cartContext";
-//import "./Checkout.css";
+import "./Checkout.css";
+
+// Make sure to call loadStripe outside of a component’s render to avoid
+// recreating the Stripe object on every render.
+
+const promise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function Checkout() {
   const { cart } = useCartContext();
-  console.log(cart);
-  function getTotalAmt(total, prod) {
+  const amount = cart?.reduce((total, prod) => {
     return total + prod.product.price * prod.quantity;
-  }
+  },0);
   return (
-    <section className="checkout-page">
-      <div className="shipping-address">
-        <h3 className="heading">Delivery Address</h3>
-        <div>
-          <textarea
-            name="address"
-            cols="40"
-            rows="7"
-            placeholder="enter your address"
-          ></textarea>
+    <div className="checkout">
+      <h2 className="section-heading" style={{textDecoration: "none"}}>Complete your purchase</h2>
+      <Elements stripe={promise}>
+      <div className="payment-component">
+          <CheckoutForm amount={amount} cart={cart}/>
         </div>
-      </div>
-      <div className="order-summary">
-        <h3 className="heading">Order Summary</h3>
-        <div className="order-item">
-          {cart?.map((prod) => {
-            const { product, quantity, _id } = prod;
-            return (
-              <div key={_id}>
-                <h3>{product.title}</h3>
-                <p>
-                  {`(${quantity} x ${product.price} = Rs. ${
-                    quantity * product.price
-                  })`}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-        <div className="total">
-          <h3>Total Amount</h3>
-          <p>{`Rs ${cart?.reduce(getTotalAmt, 0)}`}</p>
-        </div>
-      </div>
-    </section>
-  );
+      </Elements>
+    </div>
+  )
 }
 
 export default Checkout;
