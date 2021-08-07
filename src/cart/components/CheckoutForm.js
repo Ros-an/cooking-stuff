@@ -26,7 +26,6 @@ export default function CheckoutForm({amount, cart}) {
                 amount
             });
             setClientSecret(data.clientSecret);
-            console.log("1");
         }catch(err){
             console.log(err);
         }
