@@ -80,7 +80,7 @@ function SingleProduct() {
               <div className="control-btn">
                 <button
                   className="btn-product control-btn__cart pointer-cursor"
-                  disabled={!product.inStock}
+                  disabled={!product.inStock || present(cart, product._id)}
                   style={{ cursor: !product.inStock && "no-drop" }}
                   onClick={() => isAuthorisedCart(product)}
                 >
@@ -97,6 +97,7 @@ function SingleProduct() {
                 <button
                   className="btn-product control-btn__wish pointer-cursor"
                   onClick={() => isAuthorisedWishlist(product)}
+                  disabled={present(userData?.wishlist, product._id)}
                 >
                   {loader ? (
                     <MiniLoader spinner={true} />

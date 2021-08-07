@@ -71,6 +71,7 @@ export const CartItem = ({ product, quantity }) => {
           <button
             onClick={() => addItemToWishlist()}
             className="remove-btn wish-btn pointer-cursor"
+            disabled={present(userData.wishlist, product._id)}
           >
             {loader ? (
               <MiniLoader size={{ height: "1em", width: "1em" }} />

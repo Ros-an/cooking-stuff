@@ -46,7 +46,7 @@ function WishListItem({ item }) {
         </div>
         <div className="wishlist-btn">
           <button
-            disabled={!item.inStock}
+            disabled={!item.inStock || present(cart, item._id)}
             style={{ cursor: !item.inStock && "no-drop" }}
             onClick={() => addItemToCart()}
             className="add-cart pointer-cursor"
