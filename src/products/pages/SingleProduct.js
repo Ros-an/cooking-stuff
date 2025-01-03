@@ -31,7 +31,7 @@ function SingleProduct() {
     async function getData() {
       try {
         const response = await axios.get(
-          `https://cooking-stuff-backend.rosan.repl.co/api/products/${id}`
+          `${process.env.REACT_APP_API}/products/${id}`
         );
         setProduct(response.data.product);
       } catch (err) {
